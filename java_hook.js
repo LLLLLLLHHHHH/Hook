@@ -1036,17 +1036,18 @@ class BaseHook {
 
         try {
           // 调用自定义的Hook处理函数，并将 Java 实例(this) 作为额外参数传入，便于回调中读取 getAlgorithm/getProvider 等信息
+          const javaInstance = this; // 保存 Java 对象实例的引用
           return hookHandler.call(hookInstance, methodTag, args, () => {
-            // 原始方法调用 - this指向Java对象实例
-            return method.apply(this, args);
-          }, this);
+            // 原始方法调用 - 使用保存的 Java 对象实例
+            return method.call(javaInstance, ...args);
+          }, javaInstance);
         } catch (e) {
           Logger.error(`${methodTag} Hook执行异常: ${e.message}`, {
             tag: hookInstance.hookName,
             error: e
           });
           // 发生异常时仍调用原始方法
-          return method.apply(this, args);
+          return method.call(this, ...args);
         }
       };
 
