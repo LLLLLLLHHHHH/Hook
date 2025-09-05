@@ -41,44 +41,62 @@
  *    • 仅用于安全研究和合法的逆向分析
  *    • 请遵守相关法律法规和道德准则
  *    • 建议在测试环境中使用
-
-
-
  * ═══════════════════════════════════════════════════════════════════════════════
- * 
- *  █████╗ ██╗   ██╗████████╗██╗  ██╗ ██████╗ ██████╗ 
+ *
+ *  █████╗ ██╗   ██╗████████╗██╗  ██╗ ██████╗ ██████╗
  * ██╔══██╗██║   ██║╚══██╔══╝██║  ██║██╔═══██╗██╔══██╗
  * ███████║██║   ██║   ██║   ███████║██║   ██║██████╔╝
  * ██╔══██║██║   ██║   ██║   ██╔══██║██║   ██║██╔══██╗
  * ██║  ██║╚██████╔╝   ██║   ██║  ██║╚██████╔╝██║  ██║
  * ╚═╝  ╚═╝ ╚═════╝    ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝
- * 
+ *
  * 👨‍💻 Author: Liao
- * 📧 Contact: 529786580@qq.com
- * 🌐 GitHub: https://github.com/LLLLLLLHHHHH
-
-
-
-
-
-
-
-
+ * 📧 Contact（VX）: liao529786580
+ * 📅 Created: 2025/08
+ *
  * ═══════════════════════════════════════════════════════════════════════════════
- * 
- *  ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗ 
- * ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝ 
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *  ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗
+ * ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝
  * ██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗
  * ██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║
  * ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
- *  ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝ 
- * 
+ *  ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝
+ *
  * 全局配置对象 - 控制 Hook 系统的各种行为和输出格式
  * 包含日志配置、Hook 开关、输出格式等核心设置
  */
 const CONFIG = {
   /*
-   * ██╗      ██████╗  ██████╗  ██████╗ ███████╗██████╗ 
+   * ██╗      ██████╗  ██████╗  ██████╗ ███████╗██████╗
    * ██║     ██╔═══██╗██╔════╝ ██╔════╝ ██╔════╝██╔══██╗
    * ██║     ██║   ██║██║  ███╗██║  ███╗█████╗  ██████╔╝
    * ██║     ██║   ██║██║   ██║██║   ██║██╔══╝  ██╔══██╗
@@ -101,8 +119,8 @@ const CONFIG = {
   /*
    * ██╗  ██╗ ██████╗  ██████╗ ██╗  ██╗
    * ██║  ██║██╔═══██╗██╔═══██╗██║ ██╔╝
-   * ███████║██║   ██║██║   ██║█████╔╝ 
-   * ██╔══██║██║   ██║██║   ██║██╔═██╗ 
+   * ███████║██║   ██║██║   ██║█████╔╝
+   * ██╔══██║██║   ██║██║   ██║██╔═██╗
    * ██║  ██║╚██████╔╝╚██████╔╝██║  ██╗
    * ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝
    */
@@ -113,13 +131,13 @@ const CONFIG = {
     // 调试和跟踪配置 - Debug and Tracing Configuration
     // ═══════════════════════════════════════════════════════════════════════════════
     showStack: true,               // 显示调用堆栈（用于调试和分析调用链）
-    
+
     // 对称加密 Hook 开关
     /*
      * ███████╗██╗   ██╗███╗   ███╗███╗   ███╗███████╗████████╗██████╗ ██╗ ██████╗
      * ██╔════╝╚██╗ ██╔╝████╗ ████║████╗ ████║██╔════╝╚══██╔══╝██╔══██╗██║██╔════╝
-     * ███████╗ ╚████╔╝ ██╔████╔██║██╔████╔██║█████╗     ██║   ██████╔╝██║██║     
-     * ╚════██║  ╚██╔╝  ██║╚██╔╝██║██║╚██╔╝██║██╔══╝     ██║   ██╔══██╗██║██║     
+     * ███████╗ ╚████╔╝ ██╔████╔██║██╔████╔██║█████╗     ██║   ██████╔╝██║██║
+     * ╚════██║  ╚██╔╝  ██║╚██╔╝██║██║╚██╔╝██║██╔══╝     ██║   ██╔══██╗██║██║
      * ███████║   ██║   ██║ ╚═╝ ██║██║ ╚═╝ ██║███████╗   ██║   ██║  ██║██║╚██████╗
      * ╚══════╝   ╚═╝   ╚═╝     ╚═╝╚═╝     ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝ ╚═════╝
      */
@@ -130,13 +148,13 @@ const CONFIG = {
       // 高级加密标准 - Advanced Encryption Standard
       // ═══════════════════════════════════════════════════════════════════════════════
       aes: true,           // AES 加密算法 (128/192/256位密钥，当前最广泛使用的对称加密标准)
-      
+
       // ═══════════════════════════════════════════════════════════════════════════════
       // 数据加密标准 - Data Encryption Standard
       // ═══════════════════════════════════════════════════════════════════════════════
       des: true,           // DES 加密算法 (56位密钥，已不安全，仅用于兼容性)
       '3des': true,        // 3DES 加密算法 (168位有效密钥，DES的增强版本)
-      
+
       // ═══════════════════════════════════════════════════════════════════════════════
       // 流加密算法 - Stream Ciphers
       // ═══════════════════════════════════════════════════════════════════════════════
@@ -147,8 +165,8 @@ const CONFIG = {
     /*
      *  █████╗ ███████╗██╗   ██╗███╗   ███╗███╗   ███╗███████╗████████╗██████╗ ██╗ ██████╗
      * ██╔══██╗██╔════╝╚██╗ ██╔╝████╗ ████║████╗ ████║██╔════╝╚══██╔══╝██╔══██╗██║██╔════╝
-     * ███████║███████╗ ╚████╔╝ ██╔████╔██║██╔████╔██║█████╗     ██║   ██████╔╝██║██║     
-     * ██╔══██║╚════██║  ╚██╔╝  ██║╚██╔╝██║██║╚██╔╝██║██╔══╝     ██║   ██╔══██╗██║██║     
+     * ███████║███████╗ ╚████╔╝ ██╔████╔██║██╔████╔██║█████╗     ██║   ██████╔╝██║██║
+     * ██╔══██║╚════██║  ╚██╔╝  ██║╚██╔╝██║██║╚██╔╝██║██╔══╝     ██║   ██╔══██╗██║██║
      * ██║  ██║███████║   ██║   ██║ ╚═╝ ██║██║ ╚═╝ ██║███████╗   ██║   ██║  ██║██║╚██████╗
      * ╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝     ╚═╝╚═╝     ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝ ╚═════╝
      */
@@ -162,12 +180,12 @@ const CONFIG = {
     },
 
     /*
-     * ███████╗███╗   ██╗ ██████╗ ██████╗ ██████╗ ██╗███╗   ██╗ ██████╗ 
-     * ██╔════╝████╗  ██║██╔════╝██╔═══██╗██╔══██╗██║████╗  ██║██╔════╝ 
+     * ███████╗███╗   ██╗ ██████╗ ██████╗ ██████╗ ██╗███╗   ██╗ ██████╗
+     * ██╔════╝████╗  ██║██╔════╝██╔═══██╗██╔══██╗██║████╗  ██║██╔════╝
      * █████╗  ██╔██╗ ██║██║     ██║   ██║██║  ██║██║██╔██╗ ██║██║  ███╗
      * ██╔══╝  ██║╚██╗██║██║     ██║   ██║██║  ██║██║██║╚██╗██║██║   ██║
      * ███████╗██║ ╚████║╚██████╗╚██████╔╝██████╔╝██║██║ ╚████║╚██████╔╝
-     * ╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚═════╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝ ╚═════╝ 
+     * ╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚═════╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝ ╚═════╝
      */
     // 编码算法 Hook 开关配置
     // 监控各种数据编码和解码操作
@@ -177,18 +195,18 @@ const CONFIG = {
       // ═══════════════════════════════════════════════════════════════════════════════
       base64: true,        // Base64 编码 (64个字符集，常用于数据传输和存储)
       base32: true,        // Base32 编码 (32个字符集，对大小写不敏感)
-      
+
       // ═══════════════════════════════════════════════════════════════════════════════
       // 进制转换编码 - Radix Conversion Encoding
       // ═══════════════════════════════════════════════════════════════════════════════
       hex: true,           // 十六进制编码 (0-9, A-F字符集，常用于二进制数据表示)
-      
+
       // ═══════════════════════════════════════════════════════════════════════════════
       // 网络传输编码 - Network Transfer Encoding
       // ═══════════════════════════════════════════════════════════════════════════════
       url: true,           // URL 编码 (百分号编码，用于URL中的特殊字符处理)
       html: true,          // HTML 实体编码 (HTML特殊字符转义，防止XSS攻击)
-      
+
       // ═══════════════════════════════════════════════════════════════════════════════
       // 字符集编码 - Character Set Encoding
       // ═══════════════════════════════════════════════════════════════════════════════
@@ -213,26 +231,26 @@ const CONFIG = {
       // ═══════════════════════════════════════════════════════════════════════════════
       md5: true,           // MD5 哈希算法 (128位输出，已不安全，仅用于兼容性)
       sha1: true,          // SHA-1 哈希算法 (160位输出，已不安全，仅用于兼容性)
-      
+
       // ═══════════════════════════════════════════════════════════════════════════════
       // SHA-2 系列算法 - SHA-2 Family
       // ═══════════════════════════════════════════════════════════════════════════════
       sha256: true,        // SHA-256 哈希算法 (256位输出，广泛使用，安全性高)
       sha384: true,        // SHA-384 哈希算法 (384位输出，SHA-512的截断版本)
       sha512: true,        // SHA-512 哈希算法 (512位输出，高安全性要求场景)
-      
+
       // ═══════════════════════════════════════════════════════════════════════════════
       // SHA-3 系列算法 - SHA-3 Family (Keccak)
       // ═══════════════════════════════════════════════════════════════════════════════
       'sha3-256': true,    // SHA3-256 哈希算法 (256位输出，基于Keccak算法)
       'sha3-384': true,    // SHA3-384 哈希算法 (384位输出，基于Keccak算法)
       'sha3-512': true,    // SHA3-512 哈希算法 (512位输出，基于Keccak算法)
-      
+
       // ═══════════════════════════════════════════════════════════════════════════════
       // 消息认证码算法 - Message Authentication Code
       // ═══════════════════════════════════════════════════════════════════════════════
       hmac: true,          // HMAC 系列算法 (基于哈希的消息认证码，用于验证数据完整性和真实性)
-      
+
       // ═══════════════════════════════════════════════════════════════════════════════
       // 校验算法 - Checksum Algorithms
       // ═══════════════════════════════════════════════════════════════════════════════
@@ -243,10 +261,10 @@ const CONFIG = {
   /*
    *  ██████╗ ██╗   ██╗████████╗██████╗ ██╗   ██╗████████╗
    * ██╔═══██╗██║   ██║╚══██╔══╝██╔══██╗██║   ██║╚══██╔══╝
-   * ██║   ██║██║   ██║   ██║   ██████╔╝██║   ██║   ██║   
-   * ██║   ██║██║   ██║   ██║   ██╔═══╝ ██║   ██║   ██║   
-   * ╚██████╔╝╚██████╔╝   ██║   ██║     ╚██████╔╝   ██║   
-   *  ╚═════╝  ╚═════╝    ╚═╝   ╚═╝      ╚═════╝    ╚═╝   
+   * ██║   ██║██║   ██║   ██║   ██████╔╝██║   ██║   ██║
+   * ██║   ██║██║   ██║   ██║   ██╔═══╝ ██║   ██║   ██║
+   * ╚██████╔╝╚██████╔╝   ██║   ██║     ╚██████╔╝   ██║
+   *  ╚═════╝  ╚═════╝    ╚═╝   ╚═╝      ╚═════╝    ╚═╝
    */
   // 输出格式配置
   // 控制 Hook 数据的输出格式和显示内容
@@ -284,13 +302,13 @@ const CONFIG = {
 
 
 /*
- * ██╗      ██████╗  ██████╗  ██████╗ ███████╗██████╗ 
+ * ██╗      ██████╗  ██████╗  ██████╗ ███████╗██████╗
  * ██║     ██╔═══██╗██╔════╝ ██╔════╝ ██╔════╝██╔══██╗
  * ██║     ██║   ██║██║  ███╗██║  ███╗█████╗  ██████╔╝
  * ██║     ██║   ██║██║   ██║██║   ██║██╔══╝  ██╔══██╗
  * ███████╗╚██████╔╝╚██████╔╝╚██████╔╝███████╗██║  ██║
  * ╚══════╝ ╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝╚═╝  ╚═╝
- * 
+ *
  * 日志管理类 - 提供统一的日志输出和格式化功能
  * 支持多级别日志、颜色输出、时间戳等特性
  */
@@ -420,7 +438,7 @@ class Logger {
  * ██╔══██║██║   ██║██║   ██║██╔═██╗ ██║   ██║   ██║   ██║██║     ╚════██║
  * ██║  ██║╚██████╔╝╚██████╔╝██║  ██╗╚██████╔╝   ██║   ██║███████╗███████║
  * ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝    ╚═╝   ╚═╝╚══════╝╚══════╝
- * 
+ *
  * Hook 工具类 - 提供 Hook 操作的通用工具函数
  * 包含堆栈捕获、数据转换、字符串处理等实用功能
  */
@@ -504,7 +522,7 @@ class HookUtils {
  * ██╔══╝  ██║   ██║██╔══██╗██║╚██╔╝██║██╔══██║   ██║   ██║   ██║   ██║   ██║██║     ╚════██║
  * ██║     ╚██████╔╝██║  ██║██║ ╚═╝ ██║██║  ██║   ██║   ╚██████╔╝   ██║   ██║███████╗███████║
  * ╚═╝      ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝    ╚═════╝    ╚═╝   ╚═╝╚══════╝╚══════╝
- * 
+ *
  * 格式化工具类 - 提供数据格式转换和编码功能
  * 支持字节数组、Base64、UTF-8、ASCII、PEM 等多种格式转换
  */
@@ -517,27 +535,27 @@ class FormatUtils {
   static isByteArray(data) {
     try {
       if (data === null || data === undefined) return false;
-      
+
       // 显式判断常见类型
       if (Array.isArray(data)) return true;
-      
+
       const ctorName = data && data.constructor ? data.constructor.name : '';
       if (ctorName === 'Uint8Array' || ctorName === 'Int8Array') return true;
-      
+
       // Frida Java byte[]: 有 length，可下标访问，且可能带有$className为"[B"
       if (typeof data.length === 'number' && data.length >= 0) {
         // 检查$className为"[B"（Java字节数组标识）
         if (data.$className === '[B') return true;
-        
+
         // 检查构造函数名为"g"（Frida Java字节数组的特殊标识）
         if (ctorName === 'g') return true;
-        
+
         // 空数组也按字节数组处理
         if (data.length === 0) return true;
-        
+
         // 采样首元素类型为 number 也视为字节数组
         if (data.length > 0 && typeof data[0] === 'number') return true;
-        
+
         // 检查是否具有字节数组的特征（可通过索引访问且值为数字）
         try {
           if (data.length > 0 && typeof data[0] !== 'undefined') {
@@ -715,25 +733,25 @@ class FormatUtils {
    */
   static bytesToPem(keyBytes, keyType = 'KEY') {
     if (!keyBytes || !keyBytes.length) return null;
-    
+
     try {
       // 将字节数组转换为 Base64
       const base64 = this.bytesToBase64(keyBytes);
       if (!base64) return null;
-      
+
       // 将 Base64 字符串按64字符一行分割
       const lines = [];
       for (let i = 0; i < base64.length; i += 64) {
         lines.push(base64.substring(i, i + 64));
       }
-      
+
       // 组装 PEM 格式
       const pemContent = [
         `-----BEGIN ${keyType}-----`,
         ...lines,
         `-----END ${keyType}-----`
       ].join('\n');
-      
+
       return pemContent;
     } catch (e) {
       Logger.warn(`PEM转换失败: ${e.message}`);
@@ -749,14 +767,14 @@ class FormatUtils {
    */
   static extractKeyInfo(key, keyType = 'Key') {
     if (!key) return null;
-    
+
     try {
       const keyInfo = {
         algorithm: key.getAlgorithm ? ('' + key.getAlgorithm()) : 'Unknown',
         format: key.getFormat ? ('' + key.getFormat()) : 'Unknown',
         type: keyType
       };
-      
+
       // 尝试获取密钥编码
       try {
         const encoded = key.getEncoded ? key.getEncoded() : null;
@@ -770,7 +788,7 @@ class FormatUtils {
             raw: this.bytesToRaw(encoded),
             length: encoded.length
           };
-          
+
           // 只为非对称密钥生成 PEM 格式
           const algorithm = keyInfo.algorithm.toLowerCase();
           if (algorithm.includes('rsa') || algorithm.includes('ec') || algorithm.includes('dsa') || algorithm.includes('dh')) {
@@ -794,7 +812,7 @@ class FormatUtils {
         keyInfo.pem = null;
         keyInfo.encodeError = encodeError.message;
       }
-      
+
       return keyInfo;
     } catch (e) {
       Logger.warn(`密钥信息提取失败: ${e.message}`);
@@ -930,11 +948,11 @@ class FormatUtils {
 /*
  * ██████╗  █████╗ ███████╗███████╗██╗  ██╗ ██████╗  ██████╗ ██╗  ██╗
  * ██╔══██╗██╔══██╗██╔════╝██╔════╝██║  ██║██╔═══██╗██╔═══██╗██║ ██╔╝
- * ██████╔╝███████║███████╗█████╗  ███████║██║   ██║██║   ██║█████╔╝ 
- * ██╔══██╗██╔══██║╚════██║██╔══╝  ██╔══██║██║   ██║██║   ██║██╔═██╗ 
+ * ██████╔╝███████║███████╗█████╗  ███████║██║   ██║██║   ██║█████╔╝
+ * ██╔══██╗██╔══██║╚════██║██╔══╝  ██╔══██║██║   ██║██║   ██║██╔═██╗
  * ██████╔╝██║  ██║███████║███████╗██║  ██║╚██████╔╝╚██████╔╝██║  ██╗
  * ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝
- * 
+ *
  * Hook 基础类 - 所有 Hook 类的抽象基类
  * 提供通用的 Hook 功能、配置检查、数据格式化等核心方法
  */
@@ -1168,14 +1186,14 @@ class BaseHook {
 class HashHook extends BaseHook {
   constructor() {
     super('java.security.MessageDigest', 'HashHook', 'hash');
-    
+
     // 支持的算法映射表
     this.supportedAlgorithms = {
       'MD5': 'md5',
-      'SHA-1': 'sha1', 
+      'SHA-1': 'sha1',
       'SHA1': 'sha1',
       'SHA-256': 'sha256',
-      'SHA256': 'sha256', 
+      'SHA256': 'sha256',
       'SHA-384': 'sha384',
       'SHA384': 'sha384',
       'SHA-512': 'sha512',
@@ -1218,7 +1236,7 @@ class HashHook extends BaseHook {
     const normalizedAlg = algorithm.toUpperCase().replace(/[-_]/g, '');
     const configKey = this.supportedAlgorithms[normalizedAlg];
     if (!configKey) return false;
-    
+
     return CONFIG.hook.hash[configKey] === true;
   }
 
@@ -1614,7 +1632,7 @@ class RSACipherHook extends BaseHook {
       const key = args[1];
       const algo = key ? (key.getAlgorithm ? ('' + key.getAlgorithm()) : 'Unknown') : 'null';
       const format = key ? (key.getFormat ? ('' + key.getFormat()) : 'Unknown') : 'null';
-      
+
       // 根据 key.format/algorithm 粗略判断类型（仅用于展示标签）
       const lowerAlgo = (algo || '').toLowerCase();
       const isPublic = key && (lowerAlgo.includes('rsa') && format === 'X.509');
@@ -2109,18 +2127,18 @@ class RSAKeySpecHook extends BaseHook {
       const PKCS8EncodedKeySpec = Java.use('java.security.spec.PKCS8EncodedKeySpec');
       const constructor = PKCS8EncodedKeySpec.$init.overload('[B');
       const hookInstance = this;
-      
+
       constructor.implementation = function(encoded) {
         const methodTag = `${hookInstance.hookName}.PKCS8EncodedKeySpec(byte[])`;
         try {
           const result = constructor.call(this, encoded);
-          
+
           // 提取并记录密钥数据
           const keyData = {
             type: 'PKCS8EncodedKeySpec',
             encodedLength: encoded ? encoded.length : 0
           };
-          
+
           if (encoded && encoded.length > 0) {
             keyData.encoded = {
               hex: HookUtils.bytesToHex(encoded),
@@ -2128,23 +2146,23 @@ class RSAKeySpecHook extends BaseHook {
               pem: FormatUtils.bytesToPem(encoded, 'PRIVATE KEY')
             };
           }
-          
-          Logger.info(`${methodTag} 调用 - 捕获到私钥数据`, { 
-            tag: hookInstance.hookName, 
-            data: keyData 
+
+          Logger.info(`${methodTag} 调用 - 捕获到私钥数据`, {
+            tag: hookInstance.hookName,
+            data: keyData
           });
           HookUtils.captureStack(methodTag);
-          
+
           return result;
         } catch (e) {
-          Logger.error(`${methodTag} Hook执行异常: ${e.message}`, { 
-            tag: hookInstance.hookName, 
-            error: e 
+          Logger.error(`${methodTag} Hook执行异常: ${e.message}`, {
+            tag: hookInstance.hookName,
+            error: e
           });
           return constructor.call(this, encoded);
         }
       };
-      
+
       Logger.info('PKCS8EncodedKeySpec Hook 设置完成', { tag: this.hookName });
     } catch (e) {
       Logger.warn(`PKCS8EncodedKeySpec Hook 设置失败: ${e.message}`, { tag: this.hookName });
@@ -2157,18 +2175,18 @@ class RSAKeySpecHook extends BaseHook {
       const X509EncodedKeySpec = Java.use('java.security.spec.X509EncodedKeySpec');
       const constructor = X509EncodedKeySpec.$init.overload('[B');
       const hookInstance = this;
-      
+
       constructor.implementation = function(encoded) {
         const methodTag = `${hookInstance.hookName}.X509EncodedKeySpec(byte[])`;
         try {
           const result = constructor.call(this, encoded);
-          
+
           // 提取并记录密钥数据
           const keyData = {
             type: 'X509EncodedKeySpec',
             encodedLength: encoded ? encoded.length : 0
           };
-          
+
           if (encoded && encoded.length > 0) {
             keyData.encoded = {
               hex: HookUtils.bytesToHex(encoded),
@@ -2176,23 +2194,23 @@ class RSAKeySpecHook extends BaseHook {
               pem: FormatUtils.bytesToPem(encoded, 'PUBLIC KEY')
             };
           }
-          
-          Logger.info(`${methodTag} 调用 - 捕获到公钥数据`, { 
-            tag: hookInstance.hookName, 
-            data: keyData 
+
+          Logger.info(`${methodTag} 调用 - 捕获到公钥数据`, {
+            tag: hookInstance.hookName,
+            data: keyData
           });
           HookUtils.captureStack(methodTag);
-          
+
           return result;
         } catch (e) {
-          Logger.error(`${methodTag} Hook执行异常: ${e.message}`, { 
-            tag: hookInstance.hookName, 
-            error: e 
+          Logger.error(`${methodTag} Hook执行异常: ${e.message}`, {
+            tag: hookInstance.hookName,
+            error: e
           });
           return constructor.call(this, encoded);
         }
       };
-      
+
       Logger.info('X509EncodedKeySpec Hook 设置完成', { tag: this.hookName });
     } catch (e) {
       Logger.warn(`X509EncodedKeySpec Hook 设置失败: ${e.message}`, { tag: this.hookName });
@@ -2205,35 +2223,35 @@ class RSAKeySpecHook extends BaseHook {
       const RSAPrivateKeySpec = Java.use('java.security.spec.RSAPrivateKeySpec');
       const constructor = RSAPrivateKeySpec.$init.overload('java.math.BigInteger', 'java.math.BigInteger');
       const hookInstance = this;
-      
+
       constructor.implementation = function(modulus, privateExponent) {
         const methodTag = `${hookInstance.hookName}.RSAPrivateKeySpec(BigInteger,BigInteger)`;
         try {
           const result = constructor.call(this, modulus, privateExponent);
-          
+
           const keyData = {
             type: 'RSAPrivateKeySpec',
             modulus: modulus ? modulus.toString(16) : null,
             privateExponent: privateExponent ? privateExponent.toString(16) : null,
             modulusLength: modulus ? modulus.bitLength() : 0
           };
-          
-          Logger.info(`${methodTag} 调用 - 捕获到RSA私钥参数`, { 
-            tag: hookInstance.hookName, 
-            data: keyData 
+
+          Logger.info(`${methodTag} 调用 - 捕获到RSA私钥参数`, {
+            tag: hookInstance.hookName,
+            data: keyData
           });
           HookUtils.captureStack(methodTag);
-          
+
           return result;
         } catch (e) {
-          Logger.error(`${methodTag} Hook执行异常: ${e.message}`, { 
-            tag: hookInstance.hookName, 
-            error: e 
+          Logger.error(`${methodTag} Hook执行异常: ${e.message}`, {
+            tag: hookInstance.hookName,
+            error: e
           });
           return constructor.call(this, modulus, privateExponent);
         }
       };
-      
+
       Logger.info('RSAPrivateKeySpec Hook 设置完成', { tag: this.hookName });
     } catch (e) {
       Logger.warn(`RSAPrivateKeySpec Hook 设置失败: ${e.message}`, { tag: this.hookName });
@@ -2244,35 +2262,35 @@ class RSAKeySpecHook extends BaseHook {
       const RSAPublicKeySpec = Java.use('java.security.spec.RSAPublicKeySpec');
       const constructor = RSAPublicKeySpec.$init.overload('java.math.BigInteger', 'java.math.BigInteger');
       const hookInstance = this;
-      
+
       constructor.implementation = function(modulus, publicExponent) {
         const methodTag = `${hookInstance.hookName}.RSAPublicKeySpec(BigInteger,BigInteger)`;
         try {
           const result = constructor.call(this, modulus, publicExponent);
-          
+
           const keyData = {
             type: 'RSAPublicKeySpec',
             modulus: modulus ? modulus.toString(16) : null,
             publicExponent: publicExponent ? publicExponent.toString(16) : null,
             modulusLength: modulus ? modulus.bitLength() : 0
           };
-          
-          Logger.info(`${methodTag} 调用 - 捕获到RSA公钥参数`, { 
-            tag: hookInstance.hookName, 
-            data: keyData 
+
+          Logger.info(`${methodTag} 调用 - 捕获到RSA公钥参数`, {
+            tag: hookInstance.hookName,
+            data: keyData
           });
           HookUtils.captureStack(methodTag);
-          
+
           return result;
         } catch (e) {
-          Logger.error(`${methodTag} Hook执行异常: ${e.message}`, { 
-            tag: hookInstance.hookName, 
-            error: e 
+          Logger.error(`${methodTag} Hook执行异常: ${e.message}`, {
+            tag: hookInstance.hookName,
+            error: e
           });
           return constructor.call(this, modulus, publicExponent);
         }
       };
-      
+
       Logger.info('RSAPublicKeySpec Hook 设置完成', { tag: this.hookName });
     } catch (e) {
       Logger.warn(`RSAPublicKeySpec Hook 设置失败: ${e.message}`, { tag: this.hookName });
@@ -2285,7 +2303,7 @@ class RSAKeySpecHook extends BaseHook {
       if (this.javaClass && this.javaClass.$init) {
         const constructors = this.javaClass.$init.overloads;
         const hookInstance = this;
-        
+
         constructors.forEach((constructor, index) => {
           try {
             const originalImpl = constructor.implementation;
@@ -2293,22 +2311,22 @@ class RSAKeySpecHook extends BaseHook {
               const methodTag = `${hookInstance.hookName}.constructor[${index}]`;
               try {
                 const result = originalImpl ? originalImpl.apply(this, args) : constructor.call(this, ...args);
-                
-                Logger.info(`${methodTag} 调用`, { 
-                  tag: hookInstance.hookName, 
-                  data: { 
+
+                Logger.info(`${methodTag} 调用`, {
+                  tag: hookInstance.hookName,
+                  data: {
                     className: hookInstance.className,
                     argsCount: args.length,
-                    args: args.map((arg, i) => `arg${i}: ${typeof arg}`) 
-                  } 
+                    args: args.map((arg, i) => `arg${i}: ${typeof arg}`)
+                  }
                 });
                 HookUtils.captureStack(methodTag);
-                
+
                 return result;
               } catch (e) {
-                Logger.error(`${methodTag} Hook执行异常: ${e.message}`, { 
-                  tag: hookInstance.hookName, 
-                  error: e 
+                Logger.error(`${methodTag} Hook执行异常: ${e.message}`, {
+                  tag: hookInstance.hookName,
+                  error: e
                 });
                 return originalImpl ? originalImpl.apply(this, args) : constructor.call(this, ...args);
               }
@@ -2347,7 +2365,7 @@ class RSAKeyFactoryHook extends BaseHook {
     this.hookMethod('getInstance', ['java.lang.String'], (methodTag, args, originalCall) => {
       const algorithm = args[0];
       const result = originalCall();
-      
+
       // 只记录RSA相关的调用
       if (algorithm && algorithm.toString().toUpperCase().includes('RSA')) {
         Logger.info(`${methodTag} 调用`, {
@@ -2359,7 +2377,7 @@ class RSAKeyFactoryHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -2368,7 +2386,7 @@ class RSAKeyFactoryHook extends BaseHook {
       const algorithm = args[0];
       const provider = args[1];
       const result = originalCall();
-      
+
       // 只记录RSA相关的调用
       if (algorithm && algorithm.toString().toUpperCase().includes('RSA')) {
         Logger.info(`${methodTag} 调用`, {
@@ -2381,7 +2399,7 @@ class RSAKeyFactoryHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -2390,7 +2408,7 @@ class RSAKeyFactoryHook extends BaseHook {
       const algorithm = args[0];
       const provider = args[1];
       const result = originalCall();
-      
+
       // 只记录RSA相关的调用
       if (algorithm && algorithm.toString().toUpperCase().includes('RSA')) {
         Logger.info(`${methodTag} 调用`, {
@@ -2403,7 +2421,7 @@ class RSAKeyFactoryHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
   }
@@ -2415,13 +2433,13 @@ class RSAKeyFactoryHook extends BaseHook {
     this.hookMethod('generatePrivate', ['java.security.spec.KeySpec'], (methodTag, args, originalCall) => {
       const keySpec = args[0];
       const result = originalCall();
-      
+
       const keyInfo = FormatUtils.extractKeyInfo(result, 'RSA Private Key');
       const specInfo = {
         keySpecClass: keySpec ? keySpec.getClass().getName() : 'null',
         keySpecString: keySpec ? keySpec.toString() : 'null'
       };
-      
+
       Logger.info(`${methodTag} 调用 - 生成RSA私钥`, {
         tag: this.hookName,
         data: {
@@ -2430,7 +2448,7 @@ class RSAKeyFactoryHook extends BaseHook {
         }
       });
       HookUtils.captureStack(methodTag);
-      
+
       return result;
     });
   }
@@ -2442,13 +2460,13 @@ class RSAKeyFactoryHook extends BaseHook {
     this.hookMethod('generatePublic', ['java.security.spec.KeySpec'], (methodTag, args, originalCall) => {
       const keySpec = args[0];
       const result = originalCall();
-      
+
       const keyInfo = FormatUtils.extractKeyInfo(result, 'RSA Public Key');
       const specInfo = {
         keySpecClass: keySpec ? keySpec.getClass().getName() : 'null',
         keySpecString: keySpec ? keySpec.toString() : 'null'
       };
-      
+
       Logger.info(`${methodTag} 调用 - 生成RSA公钥`, {
         tag: this.hookName,
         data: {
@@ -2457,7 +2475,7 @@ class RSAKeyFactoryHook extends BaseHook {
         }
       });
       HookUtils.captureStack(methodTag);
-      
+
       return result;
     });
   }
@@ -2470,9 +2488,9 @@ class RSAKeyFactoryHook extends BaseHook {
       const key = args[0];
       const keySpecClass = args[1];
       const result = originalCall();
-      
+
       const keyInfo = FormatUtils.extractKeyInfo(key, 'Key');
-      
+
       Logger.info(`${methodTag} 调用 - 获取密钥规范`, {
         tag: this.hookName,
         data: {
@@ -2482,7 +2500,7 @@ class RSAKeyFactoryHook extends BaseHook {
         }
       });
       HookUtils.captureStack(methodTag);
-      
+
       return result;
     });
   }
@@ -2515,12 +2533,12 @@ class DESCipherHook extends BaseHook {
     this.hookMethod('getInstance', ['java.lang.String'], (methodTag, args, originalCall) => {
       const transformation = args[0];
       const result = originalCall();
-      
+
       // 只记录DES相关的调用
       if (transformation && this.isDESTransformation(transformation.toString())) {
         const transformationStr = transformation.toString();
         const parts = transformationStr.split('/');
-        
+
         Logger.info(`${methodTag} 调用`, {
           tag: this.hookName,
           data: {
@@ -2533,7 +2551,7 @@ class DESCipherHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -2542,12 +2560,12 @@ class DESCipherHook extends BaseHook {
       const transformation = args[0];
       const provider = args[1];
       const result = originalCall();
-      
+
       // 只记录DES相关的调用
       if (transformation && this.isDESTransformation(transformation.toString())) {
         const transformationStr = transformation.toString();
         const parts = transformationStr.split('/');
-        
+
         Logger.info(`${methodTag} 调用`, {
           tag: this.hookName,
           data: {
@@ -2561,7 +2579,7 @@ class DESCipherHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -2570,12 +2588,12 @@ class DESCipherHook extends BaseHook {
       const transformation = args[0];
       const provider = args[1];
       const result = originalCall();
-      
+
       // 只记录DES相关的调用
       if (transformation && this.isDESTransformation(transformation.toString())) {
         const transformationStr = transformation.toString();
         const parts = transformationStr.split('/');
-        
+
         Logger.info(`${methodTag} 调用`, {
           tag: this.hookName,
           data: {
@@ -2589,7 +2607,7 @@ class DESCipherHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
   }
@@ -2603,12 +2621,12 @@ class DESCipherHook extends BaseHook {
       const opmode = args[0];
       const key = args[1];
       const result = originalCall();
-      
+
       // 检查是否为DES算法
       if (this.isDESCipher(javaThis)) {
         const keyInfo = FormatUtils.extractKeyInfo(key, 'DES Key');
         const modeStr = this.getOperationMode(opmode);
-        
+
         const formattedOutput = this.createFormattedOutput('DES', null, null, {
           method: 'init',
           operationMode: modeStr,
@@ -2616,14 +2634,14 @@ class DESCipherHook extends BaseHook {
           key: keyInfo,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - DES初始化`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -2633,12 +2651,12 @@ class DESCipherHook extends BaseHook {
       const key = args[1];
       const random = args[2];
       const result = originalCall();
-      
+
       // 检查是否为DES算法
       if (this.isDESCipher(javaThis)) {
         const keyInfo = FormatUtils.extractKeyInfo(key, 'DES Key');
         const modeStr = this.getOperationMode(opmode);
-        
+
         const formattedOutput = this.createFormattedOutput('DES', null, null, {
           method: 'init',
           operationMode: modeStr,
@@ -2647,14 +2665,14 @@ class DESCipherHook extends BaseHook {
           secureRandom: random ? random.toString() : 'null',
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - DES初始化(带随机数)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -2664,13 +2682,13 @@ class DESCipherHook extends BaseHook {
       const key = args[1];
       const params = args[2];
       const result = originalCall();
-      
+
       // 检查是否为DES算法
       if (this.isDESCipher(javaThis)) {
         const keyInfo = FormatUtils.extractKeyInfo(key, 'DES Key');
         const modeStr = this.getOperationMode(opmode);
         const paramInfo = this.extractAlgorithmParams(params);
-        
+
         const formattedOutput = this.createFormattedOutput('DES', null, null, {
           method: 'init',
           operationMode: modeStr,
@@ -2679,14 +2697,14 @@ class DESCipherHook extends BaseHook {
           algorithmParams: paramInfo,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - DES初始化(带参数)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -2697,13 +2715,13 @@ class DESCipherHook extends BaseHook {
       const params = args[2];
       const random = args[3];
       const result = originalCall();
-      
+
       // 检查是否为DES算法
       if (this.isDESCipher(javaThis)) {
         const keyInfo = FormatUtils.extractKeyInfo(key, 'DES Key');
         const modeStr = this.getOperationMode(opmode);
         const paramInfo = this.extractAlgorithmParams(params);
-        
+
         const formattedOutput = this.createFormattedOutput('DES', null, null, {
           method: 'init',
           operationMode: modeStr,
@@ -2713,14 +2731,14 @@ class DESCipherHook extends BaseHook {
           secureRandom: random ? random.toString() : 'null',
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - DES初始化(完整参数)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
   }
@@ -2733,7 +2751,7 @@ class DESCipherHook extends BaseHook {
     this.hookMethod('update', ['[B'], (methodTag, args, originalCall, javaThis) => {
       const input = args[0];
       const result = originalCall();
-      
+
       // 检查是否为DES算法
       if (this.isDESCipher(javaThis)) {
         const formattedOutput = this.createFormattedOutput('DES', input, result, {
@@ -2742,14 +2760,14 @@ class DESCipherHook extends BaseHook {
           outputLength: result ? result.length : 0,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - DES更新数据`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -2759,7 +2777,7 @@ class DESCipherHook extends BaseHook {
       const inputOffset = args[1];
       const inputLen = args[2];
       const result = originalCall();
-      
+
       // 检查是否为DES算法
       if (this.isDESCipher(javaThis)) {
         const formattedOutput = this.createFormattedOutput('DES', input, result, {
@@ -2770,14 +2788,14 @@ class DESCipherHook extends BaseHook {
           outputLength: result ? result.length : 0,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - DES更新数据(带偏移)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -2788,7 +2806,7 @@ class DESCipherHook extends BaseHook {
       const inputLen = args[2];
       const output = args[3];
       const result = originalCall();
-      
+
       // 检查是否为DES算法
       if (this.isDESCipher(javaThis)) {
         const formattedOutput = this.createFormattedOutput('DES', input, output, {
@@ -2800,14 +2818,14 @@ class DESCipherHook extends BaseHook {
           bytesProcessed: result,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - DES更新数据(输出缓冲区)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -2819,7 +2837,7 @@ class DESCipherHook extends BaseHook {
       const output = args[3];
       const outputOffset = args[4];
       const result = originalCall();
-      
+
       // 检查是否为DES算法
       if (this.isDESCipher(javaThis)) {
         const formattedOutput = this.createFormattedOutput('DES', input, output, {
@@ -2832,14 +2850,14 @@ class DESCipherHook extends BaseHook {
           bytesProcessed: result,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - DES更新数据(完整偏移)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -2848,12 +2866,12 @@ class DESCipherHook extends BaseHook {
       const inputBB = args[0];
       const outputBB = args[1];
       const result = originalCall();
-      
+
       // 检查是否为DES算法
       if (this.isDESCipher(javaThis)) {
         const inputInfo = this.extractByteBufferInfo(inputBB, 'Input');
         const outputInfo = this.extractByteBufferInfo(outputBB, 'Output');
-        
+
         const formattedOutput = this.createFormattedOutput('DES', null, null, {
           method: 'update',
           inputBuffer: inputInfo,
@@ -2861,14 +2879,14 @@ class DESCipherHook extends BaseHook {
           bytesProcessed: result,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - DES更新数据(ByteBuffer)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
   }
@@ -2880,7 +2898,7 @@ class DESCipherHook extends BaseHook {
     // Hook doFinal() 方法
     this.hookMethod('doFinal', [], (methodTag, args, originalCall, javaThis) => {
       const result = originalCall();
-      
+
       // 检查是否为DES算法
       if (this.isDESCipher(javaThis)) {
         const formattedOutput = this.createFormattedOutput('DES', null, result, {
@@ -2888,14 +2906,14 @@ class DESCipherHook extends BaseHook {
           outputLength: result ? result.length : 0,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - DES完成加密/解密`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -2903,7 +2921,7 @@ class DESCipherHook extends BaseHook {
     this.hookMethod('doFinal', ['[B'], (methodTag, args, originalCall, javaThis) => {
       const input = args[0];
       const result = originalCall();
-      
+
       // 检查是否为DES算法
       if (this.isDESCipher(javaThis)) {
         const formattedOutput = this.createFormattedOutput('DES', input, result, {
@@ -2912,14 +2930,14 @@ class DESCipherHook extends BaseHook {
           outputLength: result ? result.length : 0,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - DES完成加密/解密(带输入)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -2929,7 +2947,7 @@ class DESCipherHook extends BaseHook {
       const inputOffset = args[1];
       const inputLen = args[2];
       const result = originalCall();
-      
+
       // 检查是否为DES算法
       if (this.isDESCipher(javaThis)) {
         const formattedOutput = this.createFormattedOutput('DES', input, result, {
@@ -2940,14 +2958,14 @@ class DESCipherHook extends BaseHook {
           outputLength: result ? result.length : 0,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - DES完成加密/解密(带偏移)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -2956,7 +2974,7 @@ class DESCipherHook extends BaseHook {
       const output = args[0];
       const outputOffset = args[1];
       const result = originalCall();
-      
+
       // 检查是否为DES算法
       if (this.isDESCipher(javaThis)) {
         const formattedOutput = this.createFormattedOutput('DES', null, output, {
@@ -2966,14 +2984,14 @@ class DESCipherHook extends BaseHook {
           bytesWritten: result,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - DES完成加密/解密(输出缓冲区)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -2984,7 +3002,7 @@ class DESCipherHook extends BaseHook {
       const inputLen = args[2];
       const output = args[3];
       const result = originalCall();
-      
+
       // 检查是否为DES算法
       if (this.isDESCipher(javaThis)) {
         const formattedOutput = this.createFormattedOutput('DES', input, output, {
@@ -2996,14 +3014,14 @@ class DESCipherHook extends BaseHook {
           bytesWritten: result,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - DES完成加密/解密(完整缓冲区)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -3015,7 +3033,7 @@ class DESCipherHook extends BaseHook {
       const output = args[3];
       const outputOffset = args[4];
       const result = originalCall();
-      
+
       // 检查是否为DES算法
       if (this.isDESCipher(javaThis)) {
         const formattedOutput = this.createFormattedOutput('DES', input, output, {
@@ -3028,14 +3046,14 @@ class DESCipherHook extends BaseHook {
           bytesWritten: result,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - DES完成加密/解密(完整偏移)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -3044,12 +3062,12 @@ class DESCipherHook extends BaseHook {
       const inputBB = args[0];
       const outputBB = args[1];
       const result = originalCall();
-      
+
       // 检查是否为DES算法
       if (this.isDESCipher(javaThis)) {
         const inputInfo = this.extractByteBufferInfo(inputBB, 'Input');
         const outputInfo = this.extractByteBufferInfo(outputBB, 'Output');
-        
+
         const formattedOutput = this.createFormattedOutput('DES', null, null, {
           method: 'doFinal',
           inputBuffer: inputInfo,
@@ -3057,14 +3075,14 @@ class DESCipherHook extends BaseHook {
           bytesWritten: result,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - DES完成加密/解密(ByteBuffer)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
   }
@@ -3131,14 +3149,14 @@ class DESCipherHook extends BaseHook {
    */
   extractAlgorithmParams(params) {
     if (!params) return { type: 'null', details: 'null' };
-    
+
     try {
       const className = params.getClass().getName();
       const paramInfo = {
         type: className,
         details: params.toString()
       };
-      
+
       // 如果是IvParameterSpec，尝试提取IV
       if (className.includes('IvParameterSpec')) {
         try {
@@ -3154,7 +3172,7 @@ class DESCipherHook extends BaseHook {
           paramInfo.ivError = e.message;
         }
       }
-      
+
       return paramInfo;
     } catch (e) {
       return {
@@ -3172,7 +3190,7 @@ class DESCipherHook extends BaseHook {
    */
   extractByteBufferInfo(byteBuffer, type = '') {
     if (!byteBuffer) return { type: type, status: 'null' };
-    
+
     try {
       return {
         type: type,
@@ -3216,12 +3234,12 @@ class AESCipherHook extends BaseHook {
     this.hookMethod('getInstance', ['java.lang.String'], (methodTag, args, originalCall) => {
       const transformation = args[0];
       const result = originalCall();
-      
+
       // 只记录AES相关的调用
       if (transformation && transformation.toString().toUpperCase().includes('AES')) {
         const transformationStr = transformation.toString();
         const parts = transformationStr.split('/');
-        
+
         Logger.info(`${methodTag} 调用`, {
           tag: this.hookName,
           data: {
@@ -3234,7 +3252,7 @@ class AESCipherHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -3243,12 +3261,12 @@ class AESCipherHook extends BaseHook {
       const transformation = args[0];
       const provider = args[1];
       const result = originalCall();
-      
+
       // 只记录AES相关的调用
       if (transformation && transformation.toString().toUpperCase().includes('AES')) {
         const transformationStr = transformation.toString();
         const parts = transformationStr.split('/');
-        
+
         Logger.info(`${methodTag} 调用`, {
           tag: this.hookName,
           data: {
@@ -3262,7 +3280,7 @@ class AESCipherHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -3271,12 +3289,12 @@ class AESCipherHook extends BaseHook {
       const transformation = args[0];
       const provider = args[1];
       const result = originalCall();
-      
+
       // 只记录AES相关的调用
       if (transformation && transformation.toString().toUpperCase().includes('AES')) {
         const transformationStr = transformation.toString();
         const parts = transformationStr.split('/');
-        
+
         Logger.info(`${methodTag} 调用`, {
           tag: this.hookName,
           data: {
@@ -3290,7 +3308,7 @@ class AESCipherHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
   }
@@ -3304,12 +3322,12 @@ class AESCipherHook extends BaseHook {
       const opmode = args[0];
       const key = args[1];
       const result = originalCall();
-      
+
       // 检查是否为AES算法
       if (this.isAESCipher(javaThis)) {
         const keyInfo = FormatUtils.extractKeyInfo(key, 'AES Key');
         const modeStr = this.getOperationMode(opmode);
-        
+
         const formattedOutput = this.createFormattedOutput('AES', null, null, {
           method: 'init',
           operationMode: modeStr,
@@ -3317,14 +3335,14 @@ class AESCipherHook extends BaseHook {
           key: keyInfo,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - AES初始化`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -3334,12 +3352,12 @@ class AESCipherHook extends BaseHook {
       const key = args[1];
       const random = args[2];
       const result = originalCall();
-      
+
       // 检查是否为AES算法
       if (this.isAESCipher(javaThis)) {
         const keyInfo = FormatUtils.extractKeyInfo(key, 'AES Key');
         const modeStr = this.getOperationMode(opmode);
-        
+
         const formattedOutput = this.createFormattedOutput('AES', null, null, {
           method: 'init',
           operationMode: modeStr,
@@ -3348,14 +3366,14 @@ class AESCipherHook extends BaseHook {
           secureRandom: random ? random.toString() : 'null',
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - AES初始化(带随机数)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -3365,13 +3383,13 @@ class AESCipherHook extends BaseHook {
       const key = args[1];
       const params = args[2];
       const result = originalCall();
-      
+
       // 检查是否为AES算法
       if (this.isAESCipher(javaThis)) {
         const keyInfo = FormatUtils.extractKeyInfo(key, 'AES Key');
         const modeStr = this.getOperationMode(opmode);
         const paramInfo = this.extractAlgorithmParams(params);
-        
+
         const formattedOutput = this.createFormattedOutput('AES', null, null, {
           method: 'init',
           operationMode: modeStr,
@@ -3380,14 +3398,14 @@ class AESCipherHook extends BaseHook {
           algorithmParams: paramInfo,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - AES初始化(带参数)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -3398,13 +3416,13 @@ class AESCipherHook extends BaseHook {
       const params = args[2];
       const random = args[3];
       const result = originalCall();
-      
+
       // 检查是否为AES算法
       if (this.isAESCipher(javaThis)) {
         const keyInfo = FormatUtils.extractKeyInfo(key, 'AES Key');
         const modeStr = this.getOperationMode(opmode);
         const paramInfo = this.extractAlgorithmParams(params);
-        
+
         const formattedOutput = this.createFormattedOutput('AES', null, null, {
           method: 'init',
           operationMode: modeStr,
@@ -3414,14 +3432,14 @@ class AESCipherHook extends BaseHook {
           secureRandom: random ? random.toString() : 'null',
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - AES初始化(完整参数)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
   }
@@ -3434,7 +3452,7 @@ class AESCipherHook extends BaseHook {
     this.hookMethod('update', ['[B'], (methodTag, args, originalCall, javaThis) => {
       const input = args[0];
       const result = originalCall();
-      
+
       // 检查是否为AES算法
       if (this.isAESCipher(javaThis)) {
         const formattedOutput = this.createFormattedOutput('AES', input, result, {
@@ -3443,14 +3461,14 @@ class AESCipherHook extends BaseHook {
           resultLength: result ? result.length : 0,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - AES更新数据`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -3460,7 +3478,7 @@ class AESCipherHook extends BaseHook {
       const inputOffset = args[1];
       const inputLen = args[2];
       const result = originalCall();
-      
+
       // 检查是否为AES算法
       if (this.isAESCipher(javaThis)) {
         const formattedOutput = this.createFormattedOutput('AES', input, result, {
@@ -3471,14 +3489,14 @@ class AESCipherHook extends BaseHook {
           resultLength: result ? result.length : 0,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - AES更新数据(带偏移)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -3489,7 +3507,7 @@ class AESCipherHook extends BaseHook {
       const inputLen = args[2];
       const output = args[3];
       const result = originalCall();
-      
+
       // 检查是否为AES算法
       if (this.isAESCipher(javaThis)) {
         const formattedOutput = this.createFormattedOutput('AES', input, output, {
@@ -3501,14 +3519,14 @@ class AESCipherHook extends BaseHook {
           bytesProcessed: result,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - AES更新数据(输出缓冲区)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -3520,7 +3538,7 @@ class AESCipherHook extends BaseHook {
       const output = args[3];
       const outputOffset = args[4];
       const result = originalCall();
-      
+
       // 检查是否为AES算法
       if (this.isAESCipher(javaThis)) {
         const formattedOutput = this.createFormattedOutput('AES', input, output, {
@@ -3533,14 +3551,14 @@ class AESCipherHook extends BaseHook {
           bytesProcessed: result,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - AES更新数据(完整偏移)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -3549,12 +3567,12 @@ class AESCipherHook extends BaseHook {
       const inputBB = args[0];
       const outputBB = args[1];
       const result = originalCall();
-      
+
       // 检查是否为AES算法
       if (this.isAESCipher(javaThis)) {
         const inputMeta = this.extractByteBufferInfo(inputBB, 'input');
         const outputMeta = this.extractByteBufferInfo(outputBB, 'output');
-        
+
         const formattedOutput = this.createFormattedOutput('AES', inputMeta.data, outputMeta.data, {
           method: 'update',
           inputBuffer: inputMeta.meta,
@@ -3562,14 +3580,14 @@ class AESCipherHook extends BaseHook {
           bytesProcessed: result,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - AES更新数据(ByteBuffer)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
   }
@@ -3581,7 +3599,7 @@ class AESCipherHook extends BaseHook {
     // Hook doFinal() 方法
     this.hookMethod('doFinal', [], (methodTag, args, originalCall, javaThis) => {
       const result = originalCall();
-      
+
       // 检查是否为AES算法
       if (this.isAESCipher(javaThis)) {
         const formattedOutput = this.createFormattedOutput('AES', null, result, {
@@ -3589,14 +3607,14 @@ class AESCipherHook extends BaseHook {
           resultLength: result ? result.length : 0,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - AES完成加密/解密`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -3604,7 +3622,7 @@ class AESCipherHook extends BaseHook {
     this.hookMethod('doFinal', ['[B'], (methodTag, args, originalCall, javaThis) => {
       const input = args[0];
       const result = originalCall();
-      
+
       // 检查是否为AES算法
       if (this.isAESCipher(javaThis)) {
         const formattedOutput = this.createFormattedOutput('AES', input, result, {
@@ -3613,14 +3631,14 @@ class AESCipherHook extends BaseHook {
           resultLength: result ? result.length : 0,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - AES完成加密/解密(带输入)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -3630,7 +3648,7 @@ class AESCipherHook extends BaseHook {
       const inputOffset = args[1];
       const inputLen = args[2];
       const result = originalCall();
-      
+
       // 检查是否为AES算法
       if (this.isAESCipher(javaThis)) {
         const formattedOutput = this.createFormattedOutput('AES', input, result, {
@@ -3641,14 +3659,14 @@ class AESCipherHook extends BaseHook {
           resultLength: result ? result.length : 0,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - AES完成加密/解密(带偏移)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -3659,7 +3677,7 @@ class AESCipherHook extends BaseHook {
       const inputLen = args[2];
       const output = args[3];
       const result = originalCall();
-      
+
       // 检查是否为AES算法
       if (this.isAESCipher(javaThis)) {
         const formattedOutput = this.createFormattedOutput('AES', input, output, {
@@ -3671,14 +3689,14 @@ class AESCipherHook extends BaseHook {
           bytesProcessed: result,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - AES完成加密/解密(输出缓冲区)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -3690,7 +3708,7 @@ class AESCipherHook extends BaseHook {
       const output = args[3];
       const outputOffset = args[4];
       const result = originalCall();
-      
+
       // 检查是否为AES算法
       if (this.isAESCipher(javaThis)) {
         const formattedOutput = this.createFormattedOutput('AES', input, output, {
@@ -3703,14 +3721,14 @@ class AESCipherHook extends BaseHook {
           bytesProcessed: result,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - AES完成加密/解密(完整偏移)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -3719,12 +3737,12 @@ class AESCipherHook extends BaseHook {
       const inputBB = args[0];
       const outputBB = args[1];
       const result = originalCall();
-      
+
       // 检查是否为AES算法
       if (this.isAESCipher(javaThis)) {
         const inputMeta = this.extractByteBufferInfo(inputBB, 'input');
         const outputMeta = this.extractByteBufferInfo(outputBB, 'output');
-        
+
         const formattedOutput = this.createFormattedOutput('AES', inputMeta.data, outputMeta.data, {
           method: 'doFinal',
           inputBuffer: inputMeta.meta,
@@ -3732,14 +3750,14 @@ class AESCipherHook extends BaseHook {
           bytesProcessed: result,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用 - AES完成加密/解密(ByteBuffer)`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
   }
@@ -3752,14 +3770,14 @@ class AESCipherHook extends BaseHook {
   isAESCipher(cipherInstance) {
     try {
       if (!cipherInstance) return false;
-      
+
       // 尝试获取算法名称
       const algorithm = cipherInstance.getAlgorithm ? cipherInstance.getAlgorithm() : null;
       if (algorithm) {
         const algStr = algorithm.toString().toUpperCase();
         return algStr.includes('AES');
       }
-      
+
       // 如果无法获取算法名称，返回false
       return false;
     } catch (e) {
@@ -3775,7 +3793,7 @@ class AESCipherHook extends BaseHook {
   getTransformation(cipherInstance) {
     try {
       if (!cipherInstance) return 'Unknown';
-      
+
       const algorithm = cipherInstance.getAlgorithm ? cipherInstance.getAlgorithm() : null;
       return algorithm ? algorithm.toString() : 'Unknown';
     } catch (e) {
@@ -3805,13 +3823,13 @@ class AESCipherHook extends BaseHook {
    */
   extractAlgorithmParams(params) {
     if (!params) return null;
-    
+
     try {
       const paramInfo = {
         class: params.getClass().getName(),
         toString: params.toString()
       };
-      
+
       // 尝试提取IV参数（IvParameterSpec）
       try {
         if (params.getIV) {
@@ -3827,7 +3845,7 @@ class AESCipherHook extends BaseHook {
       } catch (e) {
         // 忽略IV提取失败
       }
-      
+
       // 尝试提取GCM参数（GCMParameterSpec）
       try {
         if (params.getTLen) {
@@ -3846,7 +3864,7 @@ class AESCipherHook extends BaseHook {
       } catch (e) {
         // 忽略GCM参数提取失败
       }
-      
+
       return paramInfo;
     } catch (e) {
       return {
@@ -3867,19 +3885,19 @@ class AESCipherHook extends BaseHook {
       data: null,
       meta: {}
     };
-    
+
     if (!byteBuffer) {
       result.meta.note = `${type} ByteBuffer is null`;
       return result;
     }
-    
+
     try {
       // 提取ByteBuffer元数据
       if (byteBuffer.position) result.meta.position = byteBuffer.position();
       if (byteBuffer.limit) result.meta.limit = byteBuffer.limit();
       if (byteBuffer.remaining) result.meta.remaining = byteBuffer.remaining();
       if (byteBuffer.capacity) result.meta.capacity = byteBuffer.capacity();
-      
+
       // 尝试获取底层数组
       try {
         if (byteBuffer.hasArray && byteBuffer.hasArray()) {
@@ -3895,7 +3913,7 @@ class AESCipherHook extends BaseHook {
     } catch (e) {
       result.meta.error = e.message;
     }
-    
+
     return result;
   }
 }
@@ -3919,11 +3937,11 @@ class DESKeyGeneratorHook extends BaseHook {
   hookGenerateKey() {
     this.hookMethod('generateKey', [], (methodTag, args, originalCall, javaThis) => {
       const result = originalCall();
-      
+
       // 检查是否为DES密钥生成器
       if (this.isDESKeyGenerator(javaThis)) {
         const keyInfo = FormatUtils.extractKeyInfo(result, 'DES Generated Key');
-        
+
         Logger.info(`${methodTag} 调用 - DES密钥生成`, {
           tag: this.hookName,
           data: {
@@ -3935,7 +3953,7 @@ class DESKeyGeneratorHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
   }
@@ -3948,7 +3966,7 @@ class DESKeyGeneratorHook extends BaseHook {
     this.hookMethod('getInstance', ['java.lang.String'], (methodTag, args, originalCall) => {
       const algorithm = args[0];
       const result = originalCall();
-      
+
       // 只记录DES相关的调用
       if (algorithm && this.isDESAlgorithm(algorithm.toString())) {
         Logger.info(`${methodTag} 调用 - DES密钥生成器创建`, {
@@ -3961,7 +3979,7 @@ class DESKeyGeneratorHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -3970,7 +3988,7 @@ class DESKeyGeneratorHook extends BaseHook {
       const algorithm = args[0];
       const provider = args[1];
       const result = originalCall();
-      
+
       // 只记录DES相关的调用
       if (algorithm && this.isDESAlgorithm(algorithm.toString())) {
         Logger.info(`${methodTag} 调用 - DES密钥生成器创建(带提供者)`, {
@@ -3984,7 +4002,7 @@ class DESKeyGeneratorHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -3993,7 +4011,7 @@ class DESKeyGeneratorHook extends BaseHook {
       const algorithm = args[0];
       const provider = args[1];
       const result = originalCall();
-      
+
       // 只记录DES相关的调用
       if (algorithm && this.isDESAlgorithm(algorithm.toString())) {
         Logger.info(`${methodTag} 调用 - DES密钥生成器创建(带Provider对象)`, {
@@ -4007,7 +4025,7 @@ class DESKeyGeneratorHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
   }
@@ -4060,7 +4078,7 @@ class AESKeyGeneratorHook extends BaseHook {
     this.hookMethod('getInstance', ['java.lang.String'], (methodTag, args, originalCall) => {
       const algorithm = args[0];
       const result = originalCall();
-      
+
       // 只记录AES相关的调用
       if (algorithm && algorithm.toString().toUpperCase().includes('AES')) {
         Logger.info(`${methodTag} 调用`, {
@@ -4072,7 +4090,7 @@ class AESKeyGeneratorHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -4081,7 +4099,7 @@ class AESKeyGeneratorHook extends BaseHook {
       const algorithm = args[0];
       const provider = args[1];
       const result = originalCall();
-      
+
       // 只记录AES相关的调用
       if (algorithm && algorithm.toString().toUpperCase().includes('AES')) {
         Logger.info(`${methodTag} 调用`, {
@@ -4094,7 +4112,7 @@ class AESKeyGeneratorHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -4103,7 +4121,7 @@ class AESKeyGeneratorHook extends BaseHook {
       const algorithm = args[0];
       const provider = args[1];
       const result = originalCall();
-      
+
       // 只记录AES相关的调用
       if (algorithm && algorithm.toString().toUpperCase().includes('AES')) {
         Logger.info(`${methodTag} 调用`, {
@@ -4116,7 +4134,7 @@ class AESKeyGeneratorHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
   }
@@ -4129,7 +4147,7 @@ class AESKeyGeneratorHook extends BaseHook {
     this.hookMethod('init', ['int'], (methodTag, args, originalCall, javaThis) => {
       const keysize = args[0];
       const result = originalCall();
-      
+
       // 检查是否为AES密钥生成器
       if (this.isAESKeyGenerator(javaThis)) {
         Logger.info(`${methodTag} 调用 - AES密钥生成器初始化`, {
@@ -4142,7 +4160,7 @@ class AESKeyGeneratorHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -4151,7 +4169,7 @@ class AESKeyGeneratorHook extends BaseHook {
       const keysize = args[0];
       const random = args[1];
       const result = originalCall();
-      
+
       // 检查是否为AES密钥生成器
       if (this.isAESKeyGenerator(javaThis)) {
         Logger.info(`${methodTag} 调用 - AES密钥生成器初始化(带随机数)`, {
@@ -4165,7 +4183,7 @@ class AESKeyGeneratorHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -4173,7 +4191,7 @@ class AESKeyGeneratorHook extends BaseHook {
     this.hookMethod('init', ['java.security.spec.AlgorithmParameterSpec'], (methodTag, args, originalCall, javaThis) => {
       const params = args[0];
       const result = originalCall();
-      
+
       // 检查是否为AES密钥生成器
       if (this.isAESKeyGenerator(javaThis)) {
         Logger.info(`${methodTag} 调用 - AES密钥生成器初始化(带参数)`, {
@@ -4187,7 +4205,7 @@ class AESKeyGeneratorHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -4196,7 +4214,7 @@ class AESKeyGeneratorHook extends BaseHook {
       const params = args[0];
       const random = args[1];
       const result = originalCall();
-      
+
       // 检查是否为AES密钥生成器
       if (this.isAESKeyGenerator(javaThis)) {
         Logger.info(`${methodTag} 调用 - AES密钥生成器初始化(完整参数)`, {
@@ -4211,7 +4229,7 @@ class AESKeyGeneratorHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
   }
@@ -4222,11 +4240,11 @@ class AESKeyGeneratorHook extends BaseHook {
   hookGenerateKey() {
     this.hookMethod('generateKey', [], (methodTag, args, originalCall, javaThis) => {
       const result = originalCall();
-      
+
       // 检查是否为AES密钥生成器
       if (this.isAESKeyGenerator(javaThis)) {
         const keyInfo = FormatUtils.extractKeyInfo(result, 'AES Generated Key');
-        
+
         Logger.info(`${methodTag} 调用 - 生成AES密钥`, {
           tag: this.hookName,
           data: {
@@ -4237,7 +4255,7 @@ class AESKeyGeneratorHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
   }
@@ -4250,14 +4268,14 @@ class AESKeyGeneratorHook extends BaseHook {
   isAESKeyGenerator(keyGenInstance) {
     try {
       if (!keyGenInstance) return false;
-      
+
       // 尝试获取算法名称
       const algorithm = keyGenInstance.getAlgorithm ? keyGenInstance.getAlgorithm() : null;
       if (algorithm) {
         const algStr = algorithm.toString().toUpperCase();
         return algStr.includes('AES');
       }
-      
+
       return false;
     } catch (e) {
       return false;
@@ -4285,15 +4303,15 @@ class AESKeySpecHook extends BaseHook {
     try {
       const SecretKeySpec = this.javaClass;
       const hookInstance = this;
-      
+
       // Hook SecretKeySpec(byte[] key, String algorithm) 构造函数
       const constructor1 = SecretKeySpec.$init.overload('[B', 'java.lang.String');
       constructor1.implementation = function(key, algorithm) {
         const methodTag = `${hookInstance.hookName}.SecretKeySpec(byte[],String)`;
-        
+
         try {
           const result = constructor1.call(this, key, algorithm);
-          
+
           // 记录AES、HMAC和DES相关的密钥规范
           const algorithmStr = algorithm ? algorithm.toString().toUpperCase() : '';
           if (algorithmStr.includes('AES') || algorithmStr.includes('HMAC') || algorithmStr.includes('DES')) {
@@ -4309,8 +4327,8 @@ class AESKeySpecHook extends BaseHook {
                 raw: FormatUtils.bytesToRaw(key)
               } : null
             };
-            
-            const keyType = algorithmStr.includes('AES') ? 'AES' : 
+
+            const keyType = algorithmStr.includes('AES') ? 'AES' :
                            algorithmStr.includes('HMAC') ? 'HMAC' : 'DES';
             Logger.info(`${methodTag} 调用 - 创建${keyType}密钥规范`, {
               tag: hookInstance.hookName,
@@ -4318,7 +4336,7 @@ class AESKeySpecHook extends BaseHook {
             });
             HookUtils.captureStack(methodTag);
           }
-          
+
           return result;
         } catch (e) {
           Logger.error(`${methodTag} Hook执行异常: ${e.message}`, {
@@ -4328,15 +4346,15 @@ class AESKeySpecHook extends BaseHook {
           return constructor1.call(this, key, algorithm);
         }
       };
-      
+
       // Hook SecretKeySpec(byte[] key, int offset, int len, String algorithm) 构造函数
       const constructor2 = SecretKeySpec.$init.overload('[B', 'int', 'int', 'java.lang.String');
       constructor2.implementation = function(key, offset, len, algorithm) {
         const methodTag = `${hookInstance.hookName}.SecretKeySpec(byte[],int,int,String)`;
-        
+
         try {
           const result = constructor2.call(this, key, offset, len, algorithm);
-          
+
           // 记录AES和HMAC相关的密钥规范
           const algorithmStr = algorithm ? algorithm.toString().toUpperCase() : '';
           if (algorithmStr.includes('AES') || algorithmStr.includes('HMAC')) {
@@ -4355,7 +4373,7 @@ class AESKeySpecHook extends BaseHook {
                 usedHex: key.length > offset + len ? HookUtils.bytesToHex(key.slice(offset, offset + len)) : 'Invalid range'
               } : null
             };
-            
+
             const keyType = algorithmStr.includes('AES') ? 'AES' : 'HMAC';
             Logger.info(`${methodTag} 调用 - 创建${keyType}密钥规范(带偏移)`, {
               tag: hookInstance.hookName,
@@ -4363,7 +4381,7 @@ class AESKeySpecHook extends BaseHook {
             });
             HookUtils.captureStack(methodTag);
           }
-          
+
           return result;
         } catch (e) {
           Logger.error(`${methodTag} Hook执行异常: ${e.message}`, {
@@ -4373,7 +4391,7 @@ class AESKeySpecHook extends BaseHook {
           return constructor2.call(this, key, offset, len, algorithm);
         }
       };
-      
+
       Logger.info('SecretKeySpec Hook 设置完成 (2个构造函数)', { tag: this.hookName });
     } catch (e) {
       Logger.error(`SecretKeySpec Hook 设置失败: ${e.message}`, { tag: this.hookName, error: e });
@@ -4387,15 +4405,15 @@ class AESKeySpecHook extends BaseHook {
     try {
       const IvParameterSpec = Java.use('javax.crypto.spec.IvParameterSpec');
       const hookInstance = this;
-      
+
       // Hook IvParameterSpec(byte[] iv) 构造函数
       const constructor1 = IvParameterSpec.$init.overload('[B');
       constructor1.implementation = function(iv) {
         const methodTag = `${hookInstance.hookName}.IvParameterSpec(byte[])`;
-        
+
         try {
           const result = constructor1.call(this, iv);
-          
+
           const ivData = {
             ivLength: iv ? iv.length : 0,
             iv: iv ? {
@@ -4403,13 +4421,13 @@ class AESKeySpecHook extends BaseHook {
               base64: FormatUtils.bytesToBase64(iv)
             } : null
           };
-          
+
           Logger.info(`${methodTag} 调用 - 创建IV参数规范`, {
             tag: hookInstance.hookName,
             data: ivData
           });
           HookUtils.captureStack(methodTag);
-          
+
           return result;
         } catch (e) {
           Logger.error(`${methodTag} Hook执行异常: ${e.message}`, {
@@ -4419,15 +4437,15 @@ class AESKeySpecHook extends BaseHook {
           return constructor1.call(this, iv);
         }
       };
-      
+
       // Hook IvParameterSpec(byte[] iv, int offset, int len) 构造函数
       const constructor2 = IvParameterSpec.$init.overload('[B', 'int', 'int');
       constructor2.implementation = function(iv, offset, len) {
         const methodTag = `${hookInstance.hookName}.IvParameterSpec(byte[],int,int)`;
-        
+
         try {
           const result = constructor2.call(this, iv, offset, len);
-          
+
           const ivData = {
             totalIvLength: iv ? iv.length : 0,
             ivOffset: offset,
@@ -4438,13 +4456,13 @@ class AESKeySpecHook extends BaseHook {
               usedHex: iv.length > offset + len ? HookUtils.bytesToHex(iv.slice(offset, offset + len)) : 'Invalid range'
             } : null
           };
-          
+
           Logger.info(`${methodTag} 调用 - 创建IV参数规范(带偏移)`, {
             tag: hookInstance.hookName,
             data: ivData
           });
           HookUtils.captureStack(methodTag);
-          
+
           return result;
         } catch (e) {
           Logger.error(`${methodTag} Hook执行异常: ${e.message}`, {
@@ -4454,7 +4472,7 @@ class AESKeySpecHook extends BaseHook {
           return constructor2.call(this, iv, offset, len);
         }
       };
-      
+
       Logger.info('IvParameterSpec Hook 设置成功', { tag: this.hookName });
     } catch (e) {
       Logger.error(`IvParameterSpec Hook 设置失败: ${e.message}`, { tag: this.hookName, error: e });
@@ -4482,15 +4500,15 @@ class AESIvParameterSpecHook extends BaseHook {
     try {
       const IvParameterSpec = Java.use('javax.crypto.spec.IvParameterSpec');
       const hookInstance = this;
-      
+
       // Hook IvParameterSpec(byte[] iv) 构造函数
       const constructor1 = IvParameterSpec.$init.overload('[B');
       constructor1.implementation = function(iv) {
         const methodTag = `${hookInstance.hookName}.IvParameterSpec(byte[])`;
-        
+
         try {
           const result = constructor1.call(this, iv);
-          
+
           const ivData = {
             ivLength: iv ? iv.length : 0,
             iv: iv ? {
@@ -4498,13 +4516,13 @@ class AESIvParameterSpecHook extends BaseHook {
               base64: FormatUtils.bytesToBase64(iv)
             } : null
           };
-          
+
           Logger.info(`${methodTag} 调用 - 创建IV参数规范`, {
             tag: hookInstance.hookName,
             data: ivData
           });
           HookUtils.captureStack(methodTag);
-          
+
           return result;
         } catch (e) {
           Logger.error(`${methodTag} Hook执行异常: ${e.message}`, {
@@ -4514,15 +4532,15 @@ class AESIvParameterSpecHook extends BaseHook {
           return constructor1.call(this, iv);
         }
       };
-      
+
       // Hook IvParameterSpec(byte[] iv, int offset, int len) 构造函数
       const constructor2 = IvParameterSpec.$init.overload('[B', 'int', 'int');
       constructor2.implementation = function(iv, offset, len) {
         const methodTag = `${hookInstance.hookName}.IvParameterSpec(byte[],int,int)`;
-        
+
         try {
           const result = constructor2.call(this, iv, offset, len);
-          
+
           const ivData = {
             totalIvLength: iv ? iv.length : 0,
             ivOffset: offset,
@@ -4533,13 +4551,13 @@ class AESIvParameterSpecHook extends BaseHook {
               usedHex: iv.length > offset + len ? HookUtils.bytesToHex(iv.slice(offset, offset + len)) : 'Invalid range'
             } : null
           };
-          
+
           Logger.info(`${methodTag} 调用 - 创建IV参数规范(带偏移)`, {
             tag: hookInstance.hookName,
             data: ivData
           });
           HookUtils.captureStack(methodTag);
-          
+
           return result;
         } catch (e) {
           Logger.error(`${methodTag} Hook执行异常: ${e.message}`, {
@@ -4549,11 +4567,11 @@ class AESIvParameterSpecHook extends BaseHook {
           return constructor2.call(this, iv, offset, len);
         }
       };
-      
+
       // Hook getIV() 方法
       this.hookMethod('getIV', [], (methodTag, args, originalCall, javaThis) => {
         const result = originalCall();
-        
+
         const ivData = {
           ivLength: result ? result.length : 0,
           iv: result ? {
@@ -4561,16 +4579,16 @@ class AESIvParameterSpecHook extends BaseHook {
             base64: FormatUtils.bytesToBase64(result)
           } : null
         };
-        
+
         Logger.info(`${methodTag} 调用 - 获取IV`, {
           tag: this.hookName,
           data: ivData
         });
         HookUtils.captureStack(methodTag);
-        
+
         return result;
       });
-      
+
       Logger.info('IvParameterSpec Hook 设置成功', { tag: this.hookName });
     } catch (e) {
       Logger.error(`IvParameterSpec Hook 设置失败: ${e.message}`, { tag: this.hookName, error: e });
@@ -4584,15 +4602,15 @@ class AESIvParameterSpecHook extends BaseHook {
     try {
       const GCMParameterSpec = Java.use('javax.crypto.spec.GCMParameterSpec');
       const hookInstance = this;
-      
+
       // Hook GCMParameterSpec(int tLen, byte[] src) 构造函数
       const constructor1 = GCMParameterSpec.$init.overload('int', '[B');
       constructor1.implementation = function(tLen, src) {
         const methodTag = `${hookInstance.hookName}.GCMParameterSpec(int,byte[])`;
-        
+
         try {
           const result = constructor1.call(this, tLen, src);
-          
+
           const gcmData = {
             tagLength: tLen,
             ivLength: src ? src.length : 0,
@@ -4601,13 +4619,13 @@ class AESIvParameterSpecHook extends BaseHook {
               base64: FormatUtils.bytesToBase64(src)
             } : null
           };
-          
+
           Logger.info(`${methodTag} 调用 - 创建GCM参数规范`, {
             tag: hookInstance.hookName,
             data: gcmData
           });
           HookUtils.captureStack(methodTag);
-          
+
           return result;
         } catch (e) {
           Logger.error(`${methodTag} Hook执行异常: ${e.message}`, {
@@ -4617,15 +4635,15 @@ class AESIvParameterSpecHook extends BaseHook {
           return constructor1.call(this, tLen, src);
         }
       };
-      
+
       // Hook GCMParameterSpec(int tLen, byte[] src, int offset, int len) 构造函数
       const constructor2 = GCMParameterSpec.$init.overload('int', '[B', 'int', 'int');
       constructor2.implementation = function(tLen, src, offset, len) {
         const methodTag = `${hookInstance.hookName}.GCMParameterSpec(int,byte[],int,int)`;
-        
+
         try {
           const result = constructor2.call(this, tLen, src, offset, len);
-          
+
           const gcmData = {
             tagLength: tLen,
             totalIvLength: src ? src.length : 0,
@@ -4637,13 +4655,13 @@ class AESIvParameterSpecHook extends BaseHook {
               usedHex: src.length > offset + len ? HookUtils.bytesToHex(src.slice(offset, offset + len)) : 'Invalid range'
             } : null
           };
-          
+
           Logger.info(`${methodTag} 调用 - 创建GCM参数规范(带偏移)`, {
             tag: hookInstance.hookName,
             data: gcmData
           });
           HookUtils.captureStack(methodTag);
-          
+
           return result;
         } catch (e) {
           Logger.error(`${methodTag} Hook执行异常: ${e.message}`, {
@@ -4653,23 +4671,23 @@ class AESIvParameterSpecHook extends BaseHook {
           return constructor2.call(this, tLen, src, offset, len);
         }
       };
-      
+
       // Hook getTLen() 方法 - 直接检查方法是否存在
       try {
         if (GCMParameterSpec.getTLen && GCMParameterSpec.getTLen.overload) {
           const getTLenMethod = GCMParameterSpec.getTLen.overload();
           getTLenMethod.implementation = function() {
             const methodTag = `${hookInstance.hookName}.getTLen`;
-            
+
             try {
               const result = getTLenMethod.call(this);
-              
+
               Logger.info(`${methodTag} 调用 - 获取GCM标签长度`, {
                 tag: hookInstance.hookName,
                 data: { tagLength: result }
               });
               HookUtils.captureStack(methodTag);
-              
+
               return result;
             } catch (e) {
               Logger.error(`${methodTag} Hook执行异常: ${e.message}`, {
@@ -4686,17 +4704,17 @@ class AESIvParameterSpecHook extends BaseHook {
       } catch (e) {
         Logger.warn(`GCMParameterSpec.getTLen Hook跳过: ${e.message}`, { tag: this.hookName });
       }
-      
+
       // Hook getIV() 方法 - 直接检查方法是否存在
       try {
         if (GCMParameterSpec.getIV && GCMParameterSpec.getIV.overload) {
           const getIVMethod = GCMParameterSpec.getIV.overload();
           getIVMethod.implementation = function() {
             const methodTag = `${hookInstance.hookName}.getIV`;
-            
+
             try {
               const result = getIVMethod.call(this);
-              
+
               const ivData = {
                 ivLength: result ? result.length : 0,
                 iv: result ? {
@@ -4704,13 +4722,13 @@ class AESIvParameterSpecHook extends BaseHook {
                   base64: FormatUtils.bytesToBase64(result)
                 } : null
               };
-              
+
               Logger.info(`${methodTag} 调用 - 获取GCM IV`, {
                 tag: hookInstance.hookName,
                 data: ivData
               });
               HookUtils.captureStack(methodTag);
-              
+
               return result;
             } catch (e) {
               Logger.error(`${methodTag} Hook执行异常: ${e.message}`, {
@@ -4727,7 +4745,7 @@ class AESIvParameterSpecHook extends BaseHook {
       } catch (e) {
         Logger.warn(`GCMParameterSpec.getIV Hook跳过: ${e.message}`, { tag: this.hookName });
       }
-      
+
       Logger.info('GCMParameterSpec Hook 设置成功', { tag: this.hookName });
     } catch (e) {
       Logger.error(`GCMParameterSpec Hook 设置失败: ${e.message}`, { tag: this.hookName, error: e });
@@ -4763,7 +4781,7 @@ class HMACKeyGeneratorHook extends BaseHook {
     this.hookMethod('getInstance', ['java.lang.String'], (methodTag, args, originalCall) => {
       const algorithm = args[0];
       const result = originalCall();
-      
+
       // 只记录HMAC相关的调用
       if (algorithm && algorithm.toString().toUpperCase().includes('HMAC')) {
         Logger.info(`${methodTag} 调用 - HMAC密钥生成器获取`, {
@@ -4775,7 +4793,7 @@ class HMACKeyGeneratorHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -4784,7 +4802,7 @@ class HMACKeyGeneratorHook extends BaseHook {
       const algorithm = args[0];
       const provider = args[1];
       const result = originalCall();
-      
+
       // 只记录HMAC相关的调用
       if (algorithm && algorithm.toString().toUpperCase().includes('HMAC')) {
         Logger.info(`${methodTag} 调用 - HMAC密钥生成器获取(带提供者)`, {
@@ -4797,7 +4815,7 @@ class HMACKeyGeneratorHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -4806,7 +4824,7 @@ class HMACKeyGeneratorHook extends BaseHook {
       const algorithm = args[0];
       const provider = args[1];
       const result = originalCall();
-      
+
       // 只记录HMAC相关的调用
       if (algorithm && algorithm.toString().toUpperCase().includes('HMAC')) {
         Logger.info(`${methodTag} 调用 - HMAC密钥生成器获取(带Provider对象)`, {
@@ -4819,7 +4837,7 @@ class HMACKeyGeneratorHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
   }
@@ -4832,7 +4850,7 @@ class HMACKeyGeneratorHook extends BaseHook {
     this.hookMethod('init', ['int'], (methodTag, args, originalCall, javaThis) => {
       const keysize = args[0];
       const result = originalCall();
-      
+
       // 检查是否为HMAC密钥生成器
       if (this.isHMACKeyGenerator(javaThis)) {
         Logger.info(`${methodTag} 调用 - HMAC密钥生成器初始化`, {
@@ -4845,7 +4863,7 @@ class HMACKeyGeneratorHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -4854,7 +4872,7 @@ class HMACKeyGeneratorHook extends BaseHook {
       const keysize = args[0];
       const random = args[1];
       const result = originalCall();
-      
+
       // 检查是否为HMAC密钥生成器
       if (this.isHMACKeyGenerator(javaThis)) {
         Logger.info(`${methodTag} 调用 - HMAC密钥生成器初始化(带随机数)`, {
@@ -4868,7 +4886,7 @@ class HMACKeyGeneratorHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -4876,7 +4894,7 @@ class HMACKeyGeneratorHook extends BaseHook {
     this.hookMethod('init', ['java.security.spec.AlgorithmParameterSpec'], (methodTag, args, originalCall, javaThis) => {
       const params = args[0];
       const result = originalCall();
-      
+
       // 检查是否为HMAC密钥生成器
       if (this.isHMACKeyGenerator(javaThis)) {
         Logger.info(`${methodTag} 调用 - HMAC密钥生成器初始化(带参数)`, {
@@ -4890,7 +4908,7 @@ class HMACKeyGeneratorHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -4899,7 +4917,7 @@ class HMACKeyGeneratorHook extends BaseHook {
       const params = args[0];
       const random = args[1];
       const result = originalCall();
-      
+
       // 检查是否为HMAC密钥生成器
       if (this.isHMACKeyGenerator(javaThis)) {
         Logger.info(`${methodTag} 调用 - HMAC密钥生成器初始化(完整参数)`, {
@@ -4914,7 +4932,7 @@ class HMACKeyGeneratorHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
   }
@@ -4925,11 +4943,11 @@ class HMACKeyGeneratorHook extends BaseHook {
   hookGenerateKey() {
     this.hookMethod('generateKey', [], (methodTag, args, originalCall, javaThis) => {
       const result = originalCall();
-      
+
       // 检查是否为HMAC密钥生成器
       if (this.isHMACKeyGenerator(javaThis)) {
         const keyInfo = FormatUtils.extractKeyInfo(result, 'HMAC Generated Key');
-        
+
         Logger.info(`${methodTag} 调用 - 生成HMAC密钥`, {
           tag: this.hookName,
           data: {
@@ -4940,7 +4958,7 @@ class HMACKeyGeneratorHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
   }
@@ -4953,14 +4971,14 @@ class HMACKeyGeneratorHook extends BaseHook {
   isHMACKeyGenerator(keyGenInstance) {
     try {
       if (!keyGenInstance) return false;
-      
+
       // 尝试获取算法名称
       const algorithm = keyGenInstance.getAlgorithm ? keyGenInstance.getAlgorithm() : null;
       if (algorithm) {
         const algStr = algorithm.toString().toUpperCase();
         return algStr.includes('HMAC');
       }
-      
+
       return false;
     } catch (e) {
       return false;
@@ -4975,7 +4993,7 @@ class HMACKeyGeneratorHook extends BaseHook {
   getAlgorithmName(keyGenInstance) {
     try {
       if (!keyGenInstance) return 'HMAC';
-      
+
       const algorithm = keyGenInstance.getAlgorithm ? keyGenInstance.getAlgorithm() : null;
       return algorithm ? algorithm.toString() : 'HMAC';
     } catch (e) {
@@ -4984,11 +5002,10 @@ class HMACKeyGeneratorHook extends BaseHook {
   }
 }
 
-
 class HMACHook extends BaseHook {
   constructor() {
     super('javax.crypto.Mac', 'HMACHook', 'hash.hmac');
-    
+
     // 支持的HMAC算法映射表
     this.supportedAlgorithms = {
       'HMACMD5': 'hmac',
@@ -5036,7 +5053,7 @@ class HMACHook extends BaseHook {
     const normalizedAlg = algorithm.toUpperCase().replace(/[-_]/g, '');
     const configKey = this.supportedAlgorithms[normalizedAlg];
     if (!configKey) return false;
-    
+
     return CONFIG.hook.hash.hmac === true;
   }
 
@@ -5168,7 +5185,7 @@ class HMACHook extends BaseHook {
     this.hookMethod('init', ['java.security.Key'], (methodTag, args, originalCall, javaThis) => {
       const key = args[0];
       const result = originalCall();
-      
+
       try {
         // 获取算法名称
         let algorithm = 'HMAC';
@@ -5177,16 +5194,16 @@ class HMACHook extends BaseHook {
         } catch (e) {
           algorithm = 'HMAC';
         }
-        
+
         // 检查是否为支持的HMAC算法且已启用
         if (this.isAlgorithmEnabled(algorithm)) {
           const keyInfo = FormatUtils.extractKeyInfo(key, 'HMAC Key');
-          
+
           const formattedOutput = this.createFormattedOutput(algorithm, null, null, {
             method: 'init',
             key: keyInfo
           });
-          
+
           Logger.info(`${methodTag} 调用 - HMAC初始化`, {
             tag: this.hookName,
             data: formattedOutput
@@ -5199,7 +5216,7 @@ class HMACHook extends BaseHook {
           error: e
         });
       }
-      
+
       return result;
     });
 
@@ -5208,7 +5225,7 @@ class HMACHook extends BaseHook {
       const key = args[0];
       const params = args[1];
       const result = originalCall();
-      
+
       try {
         // 获取算法名称
         let algorithm = 'HMAC';
@@ -5217,18 +5234,18 @@ class HMACHook extends BaseHook {
         } catch (e) {
           algorithm = 'HMAC';
         }
-        
+
         // 检查是否为支持的HMAC算法且已启用
         if (this.isAlgorithmEnabled(algorithm)) {
           const keyInfo = FormatUtils.extractKeyInfo(key, 'HMAC Key');
-          
+
           const formattedOutput = this.createFormattedOutput(algorithm, null, null, {
             method: 'init',
             key: keyInfo,
             params: params ? params.toString() : 'null',
             paramsClass: params ? params.getClass().getName() : 'null'
           });
-          
+
           Logger.info(`${methodTag} 调用 - HMAC初始化(带参数)`, {
             tag: this.hookName,
             data: formattedOutput
@@ -5241,7 +5258,7 @@ class HMACHook extends BaseHook {
           error: e
         });
       }
-      
+
       return result;
     });
   }
@@ -5254,7 +5271,7 @@ class HMACHook extends BaseHook {
     this.hookMethod('update', ['[B'], (methodTag, args, originalCall, javaThis) => {
       const input = args[0];
       const result = originalCall();
-      
+
       try {
         // 获取算法名称
         let algorithm = 'HMAC';
@@ -5263,14 +5280,14 @@ class HMACHook extends BaseHook {
         } catch (e) {
           algorithm = 'HMAC';
         }
-        
+
         // 检查是否为支持的HMAC算法且已启用
         if (this.isAlgorithmEnabled(algorithm)) {
           const formattedOutput = this.createFormattedOutput(algorithm, input, null, {
             method: 'update',
             inputLength: input ? input.length : 0
           });
-          
+
           Logger.info(`${methodTag} 调用 - HMAC更新数据`, {
             tag: this.hookName,
             data: formattedOutput
@@ -5283,7 +5300,7 @@ class HMACHook extends BaseHook {
           error: e
         });
       }
-      
+
       return result;
     });
 
@@ -5293,7 +5310,7 @@ class HMACHook extends BaseHook {
       const offset = args[1];
       const len = args[2];
       const result = originalCall();
-      
+
       try {
         // 获取算法名称
         let algorithm = 'HMAC';
@@ -5302,7 +5319,7 @@ class HMACHook extends BaseHook {
         } catch (e) {
           algorithm = 'HMAC';
         }
-        
+
         // 检查是否为支持的HMAC算法且已启用
         if (this.isAlgorithmEnabled(algorithm)) {
           const formattedOutput = this.createFormattedOutput(algorithm, input, null, {
@@ -5311,7 +5328,7 @@ class HMACHook extends BaseHook {
             offset: offset,
             length: len
           });
-          
+
           Logger.info(`${methodTag} 调用 - HMAC更新数据(带偏移)`, {
             tag: this.hookName,
             data: formattedOutput
@@ -5324,7 +5341,7 @@ class HMACHook extends BaseHook {
           error: e
         });
       }
-      
+
       return result;
     });
 
@@ -5332,7 +5349,7 @@ class HMACHook extends BaseHook {
     this.hookMethod('update', ['java.nio.ByteBuffer'], (methodTag, args, originalCall, javaThis) => {
       const inputBB = args[0];
       const result = originalCall();
-      
+
       try {
         // 获取算法名称
         let algorithm = 'HMAC';
@@ -5341,12 +5358,12 @@ class HMACHook extends BaseHook {
         } catch (e) {
           algorithm = 'HMAC';
         }
-        
+
         // 检查是否为支持的HMAC算法且已启用
         if (this.isAlgorithmEnabled(algorithm)) {
           let inputData = null;
           let inputLength = 0;
-          
+
           if (inputBB) {
             try {
               inputLength = inputBB.remaining();
@@ -5360,13 +5377,13 @@ class HMACHook extends BaseHook {
               Logger.warn(`无法读取ByteBuffer数据: ${e.message}`, { tag: this.hookName });
             }
           }
-          
+
           const formattedOutput = this.createFormattedOutput(algorithm, inputData, null, {
             method: 'update',
             inputType: 'ByteBuffer',
             inputLength: inputLength
           });
-          
+
           Logger.info(`${methodTag} 调用 - HMAC更新数据(ByteBuffer)`, {
             tag: this.hookName,
             data: formattedOutput
@@ -5379,7 +5396,7 @@ class HMACHook extends BaseHook {
           error: e
         });
       }
-      
+
       return result;
     });
   }
@@ -5391,7 +5408,7 @@ class HMACHook extends BaseHook {
     // Hook doFinal() 方法
     this.hookMethod('doFinal', [], (methodTag, args, originalCall, javaThis) => {
       const result = originalCall();
-      
+
       try {
         // 获取算法名称
         let algorithm = 'HMAC';
@@ -5400,14 +5417,14 @@ class HMACHook extends BaseHook {
         } catch (e) {
           algorithm = 'HMAC';
         }
-        
+
         // 检查是否为支持的HMAC算法且已启用
         if (this.isAlgorithmEnabled(algorithm)) {
           const formattedOutput = this.createFormattedOutput(algorithm, null, result, {
             method: 'doFinal',
             resultLength: result ? result.length : 0
           });
-          
+
           Logger.info(`${methodTag} 调用 - HMAC计算完成`, {
             tag: this.hookName,
             data: formattedOutput
@@ -5420,7 +5437,7 @@ class HMACHook extends BaseHook {
           error: e
         });
       }
-      
+
       return result;
     });
 
@@ -5428,7 +5445,7 @@ class HMACHook extends BaseHook {
     this.hookMethod('doFinal', ['[B'], (methodTag, args, originalCall, javaThis) => {
       const input = args[0];
       const result = originalCall();
-      
+
       try {
         // 获取算法名称
         let algorithm = 'HMAC';
@@ -5437,7 +5454,7 @@ class HMACHook extends BaseHook {
         } catch (e) {
           algorithm = 'HMAC';
         }
-        
+
         // 检查是否为支持的HMAC算法且已启用
         if (this.isAlgorithmEnabled(algorithm)) {
           const formattedOutput = this.createFormattedOutput(algorithm, input, result, {
@@ -5445,7 +5462,7 @@ class HMACHook extends BaseHook {
             inputLength: input ? input.length : 0,
             resultLength: result ? result.length : 0
           });
-          
+
           Logger.info(`${methodTag} 调用 - HMAC计算完成(带输入)`, {
             tag: this.hookName,
             data: formattedOutput
@@ -5458,16 +5475,23 @@ class HMACHook extends BaseHook {
           error: e
         });
       }
-      
+
       return result;
     });
   }
 }
 
-/**
- * DESKeySpec Hook 类
- * 用于Hook javax.crypto.spec.DESKeySpec的构造函数和方法
- */
+
+
+
+
+
+
+
+
+
+
+
 class DESKeySpecHook extends BaseHook {
   constructor() {
     super('javax.crypto.spec.DESKeySpec', 'DESKeySpec', 'symmetricCrypto.des');
@@ -5489,7 +5513,7 @@ class DESKeySpecHook extends BaseHook {
     this.hookMethod('$init', ['[B'], (methodTag, args, originalCall, javaThis) => {
       const keyBytes = args[0];
       const result = originalCall();
-      
+
       if (keyBytes) {
         const keyData = {
           algorithm: 'DES',
@@ -5503,7 +5527,7 @@ class DESKeySpecHook extends BaseHook {
             raw: keyBytes
           }
         };
-        
+
         Logger.info(`${methodTag} 调用 - DES密钥规范创建`, {
           tag: this.hookName,
           data: {
@@ -5514,7 +5538,7 @@ class DESKeySpecHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -5523,11 +5547,11 @@ class DESKeySpecHook extends BaseHook {
       const keyBytes = args[0];
       const offset = args[1];
       const result = originalCall();
-      
+
       if (keyBytes) {
         // 提取从offset开始的8字节作为DES密钥
         const actualKeyBytes = keyBytes.slice(offset, offset + 8);
-        
+
         const keyData = {
           algorithm: 'DES',
           keyLength: actualKeyBytes.length,
@@ -5542,7 +5566,7 @@ class DESKeySpecHook extends BaseHook {
             raw: actualKeyBytes
           }
         };
-        
+
         Logger.info(`${methodTag} 调用 - DES密钥规范创建(带偏移)`, {
           tag: this.hookName,
           data: {
@@ -5553,7 +5577,7 @@ class DESKeySpecHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
   }
@@ -5565,7 +5589,7 @@ class DESKeySpecHook extends BaseHook {
     // Hook getKey() 方法
     this.hookMethod('getKey', [], (methodTag, args, originalCall, javaThis) => {
       const result = originalCall();
-      
+
       if (result) {
         const keyData = {
           algorithm: 'DES',
@@ -5579,7 +5603,7 @@ class DESKeySpecHook extends BaseHook {
             raw: result
           }
         };
-        
+
         Logger.info(`${methodTag} 调用 - 获取DES密钥`, {
           tag: this.hookName,
           data: {
@@ -5590,7 +5614,7 @@ class DESKeySpecHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -5599,10 +5623,10 @@ class DESKeySpecHook extends BaseHook {
       const keyBytes = args[0];
       const offset = args[1];
       const result = originalCall();
-      
+
       if (keyBytes) {
         const actualKeyBytes = keyBytes.slice(offset, offset + 8);
-        
+
         Logger.info(`${methodTag} 调用 - 检查DES弱密钥`, {
           tag: this.hookName,
           data: {
@@ -5615,16 +5639,13 @@ class DESKeySpecHook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
   }
 }
 
-/**
- * CRC32 Hook 类
- * 用于Hook java.util.zip.CRC32的方法
- */
+
 class CRC32Hook extends BaseHook {
   constructor() {
     super('java.util.zip.CRC32', 'CRC32Hook', 'hash.crc32');
@@ -5646,15 +5667,15 @@ class CRC32Hook extends BaseHook {
   hookConstructor() {
     try {
       const hookInstance = this;
-      
+
       // Hook CRC32() 无参构造函数
       const constructor1 = this.javaClass.$init.overload();
       constructor1.implementation = function() {
         const methodTag = `${hookInstance.hookName}.CRC32()`;
-        
+
         try {
           const result = constructor1.call(this);
-          
+
           Logger.info(`${methodTag} 调用 - CRC32实例创建`, {
             tag: hookInstance.hookName,
             data: {
@@ -5663,7 +5684,7 @@ class CRC32Hook extends BaseHook {
             }
           });
           HookUtils.captureStack(methodTag);
-          
+
           return result;
         } catch (e) {
           Logger.error(`${methodTag} Hook执行异常: ${e.message}`, {
@@ -5673,7 +5694,7 @@ class CRC32Hook extends BaseHook {
           return constructor1.call(this);
         }
       };
-      
+
       Logger.info(`${this.hookName}.constructor Hook 设置成功`, { tag: this.hookName });
     } catch (e) {
       Logger.error(`${this.hookName}.constructor Hook 设置失败: ${e.message}`, {
@@ -5689,15 +5710,15 @@ class CRC32Hook extends BaseHook {
   hookUpdate() {
     try {
       const hookInstance = this;
-      
+
       // Hook update(int b) 方法
       const update1 = this.javaClass.update.overload('int');
       update1.implementation = function(b) {
         const methodTag = `${hookInstance.hookName}.update(int)`;
-        
+
         try {
           const result = update1.call(this, b);
-          
+
           Logger.info(`${methodTag} 调用 - 更新单字节`, {
             tag: hookInstance.hookName,
             data: {
@@ -5710,7 +5731,7 @@ class CRC32Hook extends BaseHook {
             }
           });
           HookUtils.captureStack(methodTag);
-          
+
           return result;
         } catch (e) {
           Logger.error(`${methodTag} Hook执行异常: ${e.message}`, {
@@ -5720,15 +5741,15 @@ class CRC32Hook extends BaseHook {
           return update1.call(this, b);
         }
       };
-      
+
       // Hook update(byte[] b) 方法
       const update2 = this.javaClass.update.overload('[B');
       update2.implementation = function(b) {
         const methodTag = `${hookInstance.hookName}.update(byte[])`;
-        
+
         try {
           const result = update2.call(this, b);
-          
+
           if (b) {
             const inputData = {
               length: b.length,
@@ -5739,7 +5760,7 @@ class CRC32Hook extends BaseHook {
               utf8: FormatUtils.bytesToUtf8(b),
               raw: FormatUtils.bytesToRaw(b)
             };
-            
+
             Logger.info(`${methodTag} 调用 - 更新字节数组`, {
               tag: hookInstance.hookName,
               data: {
@@ -5750,7 +5771,7 @@ class CRC32Hook extends BaseHook {
             });
             HookUtils.captureStack(methodTag);
           }
-          
+
           return result;
         } catch (e) {
           Logger.error(`${methodTag} Hook执行异常: ${e.message}`, {
@@ -5760,17 +5781,22 @@ class CRC32Hook extends BaseHook {
           return update2.call(this, b);
         }
       };
-      
+
       // Hook update(byte[] b, int off, int len) 方法
       const update3 = this.javaClass.update.overload('[B', 'int', 'int');
       update3.implementation = function(b, off, len) {
         const methodTag = `${hookInstance.hookName}.update(byte[],int,int)`;
-        
+
         try {
           const result = update3.call(this, b, off, len);
-          
+
           if (b && len > 0) {
-            const actualBytes = b.slice(off, off + len);
+            // 从 Java 字节数组中提取指定范围的字节
+            const actualBytes = [];
+            for (let i = 0; i < len; i++) {
+              actualBytes.push(b[off + i]);
+            }
+
             const inputData = {
               totalLength: b.length,
               offset: off,
@@ -5782,7 +5808,7 @@ class CRC32Hook extends BaseHook {
               utf8: FormatUtils.bytesToUtf8(actualBytes),
               raw: FormatUtils.bytesToRaw(actualBytes)
             };
-            
+
             Logger.info(`${methodTag} 调用 - 更新字节数组片段`, {
               tag: hookInstance.hookName,
               data: {
@@ -5793,7 +5819,7 @@ class CRC32Hook extends BaseHook {
             });
             HookUtils.captureStack(methodTag);
           }
-          
+
           return result;
         } catch (e) {
           Logger.error(`${methodTag} Hook执行异常: ${e.message}`, {
@@ -5803,7 +5829,7 @@ class CRC32Hook extends BaseHook {
           return update3.call(this, b, off, len);
         }
       };
-      
+
       Logger.info(`${this.hookName}.update Hook 设置成功 (3个重载版本)`, { tag: this.hookName });
     } catch (e) {
       Logger.error(`${this.hookName}.update Hook 设置失败: ${e.message}`, {
@@ -5819,14 +5845,14 @@ class CRC32Hook extends BaseHook {
   hookGetValue() {
     try {
       const hookInstance = this;
-      
+
       const getValue = this.javaClass.getValue;
       getValue.implementation = function() {
         const methodTag = `${hookInstance.hookName}.getValue()`;
-        
+
         try {
           const result = getValue.call(this);
-          
+
           // 安全地转换CRC32值为不同格式
           const crc32Value = result.longValue ? result.longValue() : result;
           const resultData = {
@@ -5835,7 +5861,7 @@ class CRC32Hook extends BaseHook {
             decimal: crc32Value.toString(),
             binary: (crc32Value >>> 0).toString(2).padStart(32, '0')
           };
-          
+
           Logger.info(`${methodTag} 调用 - 获取CRC32值`, {
             tag: hookInstance.hookName,
             data: {
@@ -5845,7 +5871,7 @@ class CRC32Hook extends BaseHook {
             }
           });
           HookUtils.captureStack(methodTag);
-          
+
           return result;
         } catch (e) {
           Logger.error(`${methodTag} Hook执行异常: ${e.message}`, {
@@ -5855,7 +5881,7 @@ class CRC32Hook extends BaseHook {
           return getValue.call(this);
         }
       };
-      
+
       Logger.info(`${this.hookName}.getValue Hook 设置成功`, { tag: this.hookName });
     } catch (e) {
       Logger.error(`${this.hookName}.getValue Hook 设置失败: ${e.message}`, {
@@ -5871,14 +5897,14 @@ class CRC32Hook extends BaseHook {
   hookReset() {
     try {
       const hookInstance = this;
-      
+
       const reset = this.javaClass.reset;
       reset.implementation = function() {
         const methodTag = `${hookInstance.hookName}.reset()`;
-        
+
         try {
           const result = reset.call(this);
-          
+
           Logger.info(`${methodTag} 调用 - 重置CRC32`, {
             tag: hookInstance.hookName,
             data: {
@@ -5887,7 +5913,7 @@ class CRC32Hook extends BaseHook {
             }
           });
           HookUtils.captureStack(methodTag);
-          
+
           return result;
         } catch (e) {
           Logger.error(`${methodTag} Hook执行异常: ${e.message}`, {
@@ -5897,7 +5923,7 @@ class CRC32Hook extends BaseHook {
           return reset.call(this);
         }
       };
-      
+
       Logger.info(`${this.hookName}.reset Hook 设置成功`, { tag: this.hookName });
     } catch (e) {
       Logger.error(`${this.hookName}.reset Hook 设置失败: ${e.message}`, {
@@ -5908,10 +5934,7 @@ class CRC32Hook extends BaseHook {
   }
 }
 
-/**
- * ChaCha20 流加密算法 Hook 类
- * 支持 ChaCha20 和 ChaCha20-Poly1305 算法的加密/解密操作监控
- */
+
 class ChaCha20Hook extends BaseHook {
   constructor() {
     super('javax.crypto.Cipher', 'ChaCha20', 'symmetricCrypto.chacha');
@@ -5935,12 +5958,12 @@ class ChaCha20Hook extends BaseHook {
     this.hookMethod('getInstance', ['java.lang.String'], (methodTag, args, originalCall) => {
       const transformation = args[0];
       const result = originalCall();
-      
+
       // 只记录ChaCha20相关的调用
       if (transformation && this.isChaChaTransformation(transformation.toString())) {
         const transformationStr = transformation.toString();
         const parts = transformationStr.split('/');
-        
+
         Logger.info(`${methodTag} 调用`, {
           tag: this.hookName,
           data: {
@@ -5953,7 +5976,7 @@ class ChaCha20Hook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -5962,12 +5985,12 @@ class ChaCha20Hook extends BaseHook {
       const transformation = args[0];
       const provider = args[1];
       const result = originalCall();
-      
+
       // 只记录ChaCha20相关的调用
       if (transformation && this.isChaChaTransformation(transformation.toString())) {
         const transformationStr = transformation.toString();
         const parts = transformationStr.split('/');
-        
+
         Logger.info(`${methodTag} 调用`, {
           tag: this.hookName,
           data: {
@@ -5981,7 +6004,7 @@ class ChaCha20Hook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -5990,12 +6013,12 @@ class ChaCha20Hook extends BaseHook {
       const transformation = args[0];
       const provider = args[1];
       const result = originalCall();
-      
+
       // 只记录ChaCha20相关的调用
       if (transformation && this.isChaChaTransformation(transformation.toString())) {
         const transformationStr = transformation.toString();
         const parts = transformationStr.split('/');
-        
+
         Logger.info(`${methodTag} 调用`, {
           tag: this.hookName,
           data: {
@@ -6009,7 +6032,7 @@ class ChaCha20Hook extends BaseHook {
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
   }
@@ -6023,12 +6046,12 @@ class ChaCha20Hook extends BaseHook {
       const opmode = args[0];
       const key = args[1];
       const result = originalCall();
-      
+
       // 检查是否为ChaCha20算法
       if (this.isChaCha20Cipher(javaThis)) {
         const keyInfo = FormatUtils.extractKeyInfo(key, 'ChaCha20 Key');
         const modeStr = this.getOperationMode(opmode);
-        
+
         const formattedOutput = this.createFormattedOutput('ChaCha20', null, null, {
           method: 'init',
           operationMode: modeStr,
@@ -6036,14 +6059,14 @@ class ChaCha20Hook extends BaseHook {
           transformation: this.getTransformation(javaThis),
           keyInfo: keyInfo
         });
-        
+
         Logger.info(`${methodTag} 调用`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -6053,13 +6076,13 @@ class ChaCha20Hook extends BaseHook {
       const key = args[1];
       const params = args[2];
       const result = originalCall();
-      
+
       // 检查是否为ChaCha20算法
       if (this.isChaCha20Cipher(javaThis)) {
         const keyInfo = FormatUtils.extractKeyInfo(key, 'ChaCha20 Key');
         const modeStr = this.getOperationMode(opmode);
         const paramInfo = this.extractAlgorithmParams(params);
-        
+
         const formattedOutput = this.createFormattedOutput('ChaCha20', null, null, {
           method: 'init',
           operationMode: modeStr,
@@ -6068,14 +6091,14 @@ class ChaCha20Hook extends BaseHook {
           keyInfo: keyInfo,
           algorithmParams: paramInfo
         });
-        
+
         Logger.info(`${methodTag} 调用`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
   }
@@ -6088,26 +6111,26 @@ class ChaCha20Hook extends BaseHook {
     this.hookMethod('update', ['[B'], (methodTag, args, originalCall, javaThis) => {
       const input = args[0];
       const result = originalCall();
-      
+
       // 检查是否为ChaCha20算法
       if (this.isChaCha20Cipher(javaThis) && input) {
         const inputData = this.formatData(input, 'ChaCha20 输入数据');
         const outputData = result ? this.formatData(result, 'ChaCha20 输出数据') : null;
-        
+
         const formattedOutput = this.createFormattedOutput('ChaCha20', inputData, outputData, {
           method: 'update',
           inputLength: input.length,
           outputLength: result ? result.length : 0,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -6117,7 +6140,7 @@ class ChaCha20Hook extends BaseHook {
       const inputOffset = args[1];
       const inputLen = args[2];
       const result = originalCall();
-      
+
       // 检查是否为ChaCha20算法
       if (this.isChaCha20Cipher(javaThis) && input) {
         // 提取实际处理的数据
@@ -6125,10 +6148,10 @@ class ChaCha20Hook extends BaseHook {
         for (let i = 0; i < inputLen; i++) {
           actualInput[i] = input[inputOffset + i];
         }
-        
+
         const inputData = this.formatData(actualInput, 'ChaCha20 输入数据');
         const outputData = result ? this.formatData(result, 'ChaCha20 输出数据') : null;
-        
+
         const formattedOutput = this.createFormattedOutput('ChaCha20', inputData, outputData, {
           method: 'update',
           inputOffset: inputOffset,
@@ -6137,14 +6160,14 @@ class ChaCha20Hook extends BaseHook {
           outputLength: result ? result.length : 0,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
   }
@@ -6156,24 +6179,24 @@ class ChaCha20Hook extends BaseHook {
     // Hook doFinal() 方法
     this.hookMethod('doFinal', [], (methodTag, args, originalCall, javaThis) => {
       const result = originalCall();
-      
+
       // 检查是否为ChaCha20算法
       if (this.isChaCha20Cipher(javaThis)) {
         const outputData = result ? this.formatData(result, 'ChaCha20 最终输出') : null;
-        
+
         const formattedOutput = this.createFormattedOutput('ChaCha20', null, outputData, {
           method: 'doFinal',
           outputLength: result ? result.length : 0,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
 
@@ -6181,7 +6204,7 @@ class ChaCha20Hook extends BaseHook {
     this.hookMethod('doFinal', ['[B'], (methodTag, args, originalCall, javaThis) => {
       const input = args[0];
       const result = originalCall();
-      
+
       // 检查是否为ChaCha20算法
       if (this.isChaCha20Cipher(javaThis)) {
         const formattedOutput = this.createFormattedOutput('ChaCha20', input, result, {
@@ -6190,14 +6213,14 @@ class ChaCha20Hook extends BaseHook {
           outputLength: result ? result.length : 0,
           transformation: this.getTransformation(javaThis)
         });
-        
+
         Logger.info(`${methodTag} 调用`, {
           tag: this.hookName,
           data: formattedOutput
         });
         HookUtils.captureStack(methodTag);
       }
-      
+
       return result;
     });
   }
@@ -6207,7 +6230,7 @@ class ChaCha20Hook extends BaseHook {
    */
   isChaCha20Cipher(cipherInstance) {
     if (!cipherInstance) return false;
-    
+
     try {
       const transformation = this.getTransformation(cipherInstance);
       return this.isChaChaTransformation(transformation);
@@ -6221,9 +6244,9 @@ class ChaCha20Hook extends BaseHook {
    */
   isChaChaTransformation(transformation) {
     if (!transformation) return false;
-    
+
     const upperTransformation = transformation.toUpperCase();
-    return upperTransformation.includes('CHACHA20') || 
+    return upperTransformation.includes('CHACHA20') ||
            upperTransformation.includes('CHACHA') ||
            upperTransformation.includes('CHACHA20-POLY1305');
   }
@@ -6260,13 +6283,13 @@ class ChaCha20Hook extends BaseHook {
    */
   extractAlgorithmParams(params) {
     if (!params) return null;
-    
+
     try {
       const paramInfo = {
         type: params.getClass().getName(),
         toString: params.toString()
       };
-      
+
       // 尝试提取ChaCha20ParameterSpec的特定信息
       if (params.getClass().getName().includes('ChaCha20ParameterSpec')) {
         try {
@@ -6285,7 +6308,7 @@ class ChaCha20Hook extends BaseHook {
           paramInfo.extractError = e.toString();
         }
       }
-      
+
       return paramInfo;
     } catch (e) {
       return { error: e.toString() };
@@ -6293,7 +6316,7 @@ class ChaCha20Hook extends BaseHook {
   }
 }
 
-// 启动Hook
+
 Java.perform(function() {
   Logger.separator('Frida Hook 启动', '═', 100);
   Logger.info('开始初始化 Hook 模块...', { tag: 'Main' });
